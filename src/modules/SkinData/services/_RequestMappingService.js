@@ -1,10 +1,17 @@
 const _service = {
-	mapSkinDataData: function mapSkinDataData(data) {
+	mapSkinData: function mapSkinData(data) {
 		return JSON.stringify({
-            addressType: data.addressType,
-            reason: data.reason,
-            remark: data.remark,
-            status: data.status
+                  location: data.location,
+                  weather: data.weather,
+                  temperature: data.temperature,
+                  humidity: data.humidity,
+                  pressure: data.pressure,
+                  moisture: data.moisture,
+                  oil: data.oil,
+                  pore: data.pore,
+                  skinTemperature: data.skinTemperature,
+                  skinTone: data.skinTone,
+                  wrinkle: data.wrinkle
 		})
 	}
 }

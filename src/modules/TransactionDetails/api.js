@@ -5,7 +5,7 @@ import {
 const TransactionDetailsApi = {
 	getSkinDataTransactionByHash(hash, requester) {
 		return new Promise((resolve, reject) => {
-			BlockChainApiRequest.get(`/skindata/get/${hash}`, {
+			BlockChainApiRequest.get(`/skin_data/get/${hash}`, {
 				params: {
 					requester
 				}

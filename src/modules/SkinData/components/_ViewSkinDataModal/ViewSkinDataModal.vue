@@ -12,58 +12,58 @@
         <b-container>
           <b-row>
             <b-col cols="12">
-              <label class="mr-sm-2 weather-data">Entered At : 2019-06-25 15:49:23</label>
+              <label class="mr-sm-2 weather-data">Entered At : {{ inputs.skindata.createdAt }}</label>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="12">
-              <label class="mr-sm-2 weather-data">Location : Seoul/KR</label>
+              <label class="mr-sm-2 weather-data">Location : {{ inputs.skindata.location }}</label>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="3">
-              <label class="mr-sm-2 weather-data">Weather : Fine</label>
+              <label class="mr-sm-2 weather-data">Weather : {{ inputs.skindata.weather }}</label>
             </b-col>
             <b-col cols="3">
-              <label class="mr-sm-2 weather-data">Temperature : 32 °C</label>
+              <label class="mr-sm-2 weather-data">Temperature : {{ inputs.skindata.temperature }} °C</label>
             </b-col>
             <b-col cols="3">
-              <label class="mr-sm-2 weather-data">Humidity : 63 %</label>
+              <label class="mr-sm-2 weather-data">Humidity : {{ inputs.skindata.humidity }} %</label>
             </b-col>
             <b-col cols="3">
-              <label class="mr-sm-2 weather-data">Pressure : 1017.58h Pa</label>
+              <label class="mr-sm-2 weather-data">Pressure : {{ inputs.skindata.pressure }} hPa</label>
             </b-col>
           </b-row>
           <br>
           <b-row>
             <b-col cols="4">
-              <label class="mr-sm-2 weather-data">Moisture : 10</label>
+              <label class="mr-sm-2 weather-data">Moisture : {{ inputs.skindata.moisture }}</label>
             </b-col>
             <b-col cols="4">
-              <label class="mr-sm-2 weather-data">Oil : 20</label>
+              <label class="mr-sm-2 weather-data">Oil : {{ inputs.skindata.oil }}</label>
             </b-col>
             <b-col cols="4">
-              <label class="mr-sm-2 weather-data">Pore : 10</label>
+              <label class="mr-sm-2 weather-data">Pore : {{ inputs.skindata.pore }}</label>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="4">
-              <label class="mr-sm-2 weather-data">Temperature : 30</label>
+              <label class="mr-sm-2 weather-data">Temperature : {{ inputs.skindata.skinTemperature }}</label>
             </b-col>
             <b-col cols="4">
-              <label class="mr-sm-2 weather-data">Skin tone : 10</label>
+              <label class="mr-sm-2 weather-data">Skin tone : {{ inputs.skindata.skinTone }}</label>
             </b-col>
             <b-col cols="4">
-              <label class="mr-sm-2 weather-data">Wrinkle : 20</label>
+              <label class="mr-sm-2 weather-data">Wrinkle : {{ inputs.skindata.wrinkle }}</label>
             </b-col>
           </b-row>
           <br>
           <b-row>
             <b-col cols="6">
-              <label class="mr-sm-2 highlight">Recommended Cosball Product: A123</label>
+              <label class="mr-sm-2 highlight">Recommended Cosball Product: {{ inputs.skindata.recommenedCosball }}</label>
             </b-col>
             <b-col cols="6">
-              <label class="mr-sm-2 highlight">Reward Point: 2</label>
+              <label class="mr-sm-2 highlight">Reward Point: {{ inputs.skindata.rewardPoint }}</label>
             </b-col>
           </b-row>
         </b-container>

@@ -16,15 +16,26 @@ export default {
 	},
 	props: {},
 	data() {
+		console.log(this.$store.state)
 		return {
 			title: 'View Skin Data',
 			inputs: {
 				skindata: {
-					address: this.$store.state.SkinData.skindata.location,
-					addressType: this.$store.state.SkinData.skindata.addressType ? this.$store.state.SkinData.skindata.addressType.toUpperCase() : null,
-					reason: this.$store.state.SkinData.skindata.reason,
-					remark: this.$store.state.SkinData.skindata.remark,
-					status: this.$store.state.SkinData.skindata.status
+					location: this.$store.state.SkinData.skindata.location,
+					weather: this.$store.state.SkinData.skindata.weather,
+					temperature: this.$store.state.SkinData.skindata.temperature,
+					humidity: this.$store.state.SkinData.skindata.humidity,
+					pressure: this.$store.state.SkinData.skindata.pressure,
+					moisture: this.$store.state.SkinData.skindata.moisture,
+					oil: this.$store.state.SkinData.skindata.oil,
+					pore: this.$store.state.SkinData.skindata.pore,
+					skinTemperature: this.$store.state.SkinData.skindata.skinTemperature,
+					skinTone: this.$store.state.SkinData.skindata.skinTone,
+					wrinkle: this.$store.state.SkinData.skindata.wrinkle,
+					rewardPoint: this.$store.state.SkinData.skindata.rewardPoint,
+					recommenedCosball: this.$store.state.SkinData.skindata.recommenedCosball,
+					transactionHash: this.$store.state.SkinData.skindata.transactionHash,
+					createdAt: this.$store.state.SkinData.skindata.createdAt
 				}
 			},
 			termAndPolicy: 'false',

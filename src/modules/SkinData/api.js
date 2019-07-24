@@ -17,9 +17,9 @@ const SkinDataApi = {
 			})
 		})
 	},
-	addSkinDataData(blockChainAddress, skindataObj, requester) {
+	addSkinData(skindataObj, requester) {
 		return new Promise((resolve, reject) => {
-			BlockChainApiRequest.post(`/skin_data/add/${blockChainAddress}`, {
+			BlockChainApiRequest.post(`/skin_data/add`, {
 				skindata: skindataObj
 			}, {
 				params: {

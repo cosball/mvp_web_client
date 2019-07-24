@@ -29,7 +29,7 @@ export default {
 	},
 	ADD_SKINDATA: ({commit, state, rootState}, skindataObj) => {
 		return new Promise((resolve, reject) => {
-			SkinDataApi.addSkinDataData(skindataObj.address, RequestMappingService.mapSkinDataData(skindataObj), rootState.AccountSettings.account.username)
+			SkinDataApi.addSkinData(RequestMappingService.mapSkinData(skindataObj), rootState.AccountSettings.account.username)
 				.then((response) => {
 					commit('AccountSettings/SET_ACCOUNT_ADD_SKINDATA_COUNT', response.addSkinDataCount, {root: true})
 					resolve(response)
@@ -40,7 +40,7 @@ export default {
 	},
 	UPDATE_SKINDATA: ({commit, state, rootState}, skindataObj) => {
 		return new Promise((resolve, reject) => {
-			SkinDataApi.updateSkinDataData(skindataObj.address, RequestMappingService.mapSkinDataData(skindataObj), rootState.AccountSettings.account.username)
+			SkinDataApi.updateSkinDataData(skindataObj.address, RequestMappingService.mapSkinData(skindataObj), rootState.AccountSettings.account.username)
 				.then((response) => {
 					resolve(response)
 				}, () => {
