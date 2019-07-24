@@ -1,0 +1,118 @@
+.base-modal {
+	&.base-modal-background {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-image: url('~@/assets/img/popup-msg-big.png');
+	}
+
+	& .modal-header {
+		margin-top: 0;
+		padding: 16px;
+		color: $theme-base-color-tertiary;
+		padding: 2.1em 1.875em 0.625em 3em;
+		font-weight: bolder;
+		border: 0;
+
+		& .close {
+			color: $theme-base-color-tertiary-dark;
+			opacity: 1;
+			font-weight: 100;
+			font-size: 2.1rem;
+			text-shadow: none;
+			outline: 0;
+			// margin: -2.8rem -1rem -1rem auto;
+			margin: 0;
+			position: absolute;
+			top: -10px;
+			right: 0;
+		}
+
+		& .header {
+			& .modal-title {
+				font-size: 24px;
+				font-weight: bold;
+			}
+		}
+	}
+
+	& .header-color {
+		background-color: #dd5252;
+		color: #FFFFFF;
+	}
+
+	& .modal-body {
+		padding: 16px;
+		max-height: 450px;
+		overflow-y: auto;
+		word-wrap: break-word;
+
+		& .text-padding {
+			padding: 1.1em 1.875em 0.625em 2em;
+		}
+	}
+
+	& .modal-footer {
+		padding: 16px;
+		border: 0;
+
+		& :not(:last-child) {
+			margin-right: 1.5rem;
+		}
+
+		& :not(:first-child) {
+			margin-left: 1.5rem;
+		}
+
+
+		@media (max-width: 992px) {
+			& :not(:last-child) {
+				margin-right: auto;
+			}
+
+			& :not(:first-child) {
+				margin-left: auto;
+			}
+		}
+
+		& .modal-default-button.red {
+			width: auto;
+			padding: 6px 12px;
+			height: 35px;
+			border-radius: 4px;
+			background-color: #dd5252;
+			border: solid 1px #cd0e0e;
+			color: #FFFFFF
+		}
+
+		& .modal-default-button {
+			width: auto;
+			padding: 6px 12px;
+			height: 35px;
+			border-radius: 4px;
+			background-color: #f6b8b8;
+			border: solid 1px #cd0e0e;
+			color: #cd0e0e
+		}
+	}
+
+	// & hr {
+	// 	margin-left: 20px;
+	// 	margin-right: 20px;
+	// 	border-top: 1.5px solid #ccccccb8;
+	// 	margin-top: 0;
+	// 	margin-bottom: 0;
+	// }
+}
+
+
+.v--modal-overlay {
+	z-index: 98 !important; // always on top of everything
+	background: #03000cdb !important;
+	overflow: auto;
+
+	& .v--modal {
+		background-color: transparent;
+		box-shadow: 0 0 5px $theme-base-color-tertiary-dark;
+		border: 1px solid $theme-base-color-tertiary-dark;
+	}
+}

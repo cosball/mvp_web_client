@@ -1,0 +1,52 @@
+.table {
+	& th {
+		background-color: $theme-base-color-primary;
+		border-top: 0;
+		color: $theme-base-color-lightest;
+		font-weight: normal;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 10px;
+
+		&[aria-sort]::after {
+			color: $theme-base-color-lightest !important;
+			opacity: 1 !important;
+		}
+
+		&[aria-sort="ascending"]::after,
+		&[aria-sort="descending"]::after {
+			color: $theme-base-color-tertiary !important;
+		}
+	}
+
+	& td {
+		border-top: 2px solid $theme-border-color-primary-lighter;
+	}
+}
+
+.tooltip {
+	pointer-events: none;
+}
+
+.card {
+	background-color: $theme-base-color-primary;
+
+	.card-title {
+		font-family: "Montserrat";
+		font-weight: 600;
+		font-size: 0.7rem
+	}
+}
+
+.tab-content {
+	& .fade {
+		transition: opacity 0.5s linear;
+	}
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $theme-base-color-tertiary;
+	background-color: $theme-base-color-tertiary;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 1px #d29901;
+    outline: 0 none;
+}

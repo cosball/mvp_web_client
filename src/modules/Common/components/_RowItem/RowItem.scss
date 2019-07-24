@@ -1,0 +1,22 @@
+.row-item-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    
+    & .row-item-content {
+        padding: 5px;
+    }
+
+    & .content-left {
+        flex: none;
+    }
+    
+    & .content-main {
+        flex: auto;
+    }
+    
+    & .content-right {
+        flex: none;
+        text-align: right;
+    }
+}

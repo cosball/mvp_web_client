@@ -1,0 +1,107 @@
+.privacy-wrapper {
+	background-image: url('~@/assets/img/popup-msg-big.png');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
+	& .title-container {
+		color: $theme-base-color-lightest;
+		margin-top: 48px;
+		margin-bottom: 30px;
+
+		& p {
+			font-size: 1.1rem;
+			font-weight: 400;
+			color: $theme-base-color-lightest;
+		}
+
+		& h1 {
+			font-size: 2rem;
+			font-weight: 600;
+			color: $theme-base-color-tertiary;
+		}
+
+		& h5 {
+			font-size: 16px;
+			color: $theme-base-color-lightest;
+			font-weight: 600;
+		}
+	}
+
+	& hr {
+		border-color: $theme-base-color-lightest;
+	}
+
+	& .terms-container {
+		margin: 50px auto;
+
+		& a {
+			color: $theme-base-color-tertiary;
+			font-size: 13px;
+
+			&:hover {
+				color: $theme-base-color-tertiary-dark;
+			}
+		}
+
+		& h5 {
+			font-size: 16px;
+			color: $theme-base-color-lightest;
+			font-weight: 600;
+		}
+
+		& p {
+			font-size: 13px;
+			color: $theme-base-color-lightest;
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+
+		& ul {
+			margin-left: 35px;
+			font-size: 13px;
+			color: $theme-base-color-lightest;
+		}
+
+		& ul.numeric {
+			margin-left: 35px;
+			font-size: 13px;
+			color: $theme-base-color-lightest;
+			list-style: decimal;
+
+			& li {
+				margin-top: 15px;
+			}
+
+			& li ul li {
+				list-style: lower-alpha;
+				margin-top: 5px;
+			}
+
+			& li ul li ul li {
+				list-style: lower-roman;
+				margin-top: 5px;
+			}
+		}
+
+		& .bold-text {
+			font-weight: 800;
+		}
+
+		& .link {
+			color: $theme-base-color-tertiary;
+			cursor: pointer;
+
+			&:hover {
+				color: $theme-base-color-tertiary-darker;
+			}
+		}
+
+	}
+
+	& .list-group-item {
+		background-color: $theme-base-color-transparent;
+		border: 0px solid rgba(0, 0, 0, 0.125);
+	}
+}

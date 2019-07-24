@@ -1,0 +1,59 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+* {
+	user-select: auto;
+}
+
+:not(input):not(select):not(textarea) {
+	-webkit-user-select: none;
+}
+
+*:focus {
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin-top: constant(-safe-area-inset-top);
+	margin-top: env(-safe-area-inset-top);
+	margin: 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+header,
+section,
+div {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #F5F5F5;
+	border-radius: 5px;
+}
+
+
+::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #211b497a;
+}

@@ -1,0 +1,96 @@
+/** 
+== Usage Guide ==
+
+$theme-base-color-*
+# use for any css property
+# widely used for bg, font
+
+$theme-base-greyscale-*
+# use for any css property
+# widely used for bg
+
+$theme-font-color-*
+# use for font color
+
+$theme-border-color-*
+# use for border color
+*/
+
+// Base color
+$theme-base-color-lightest: #FFF !default;
+$theme-base-color-darkest: #000 !default;
+$theme-base-color-transparent: transparent !default;
+
+$theme-base-color-primary: #0c0032 !default;
+$theme-base-color-primary-light: lighten($theme-base-color-primary, 15%) !default;
+$theme-base-color-primary-lighter: lighten($theme-base-color-primary, 30%) !default;
+$theme-base-color-primary-dark: darken($theme-base-color-primary, 15%) !default;
+$theme-base-color-primary-darker: darken($theme-base-color-primary, 30%) !default;
+
+$theme-base-color-secondary: #4201ff !default;
+$theme-base-color-secondary-light: lighten($theme-base-color-secondary, 15%) !default;
+$theme-base-color-secondary-lighter: lighten($theme-base-color-secondary, 30%) !default;
+$theme-base-color-secondary-dark: darken($theme-base-color-secondary, 15%) !default;
+$theme-base-color-secondary-darker: darken($theme-base-color-secondary, 30%) !default;
+
+$theme-base-color-tertiary: #ffc526 !default;
+$theme-base-color-tertiary-light: lighten($theme-base-color-tertiary, 15%) !default;
+$theme-base-color-tertiary-lighter: lighten($theme-base-color-tertiary, 30%) !default;
+$theme-base-color-tertiary-dark: darken($theme-base-color-tertiary, 15%) !default;
+$theme-base-color-tertiary-darker: darken($theme-base-color-tertiary, 30%) !default;
+
+$theme-base-color-info: #4385f5 !default;
+$theme-base-color-info-light: lighten($theme-base-color-info, 15%) !default;
+$theme-base-color-info-dark: darken($theme-base-color-info, 15%) !default;
+
+$theme-base-color-success: #3CC480 !default;
+$theme-base-color-success-light: lighten($theme-base-color-success, 15%) !default;
+$theme-base-color-success-dark: darken($theme-base-color-success, 15%) !default;
+
+$theme-base-color-error: #ed1c24 !default;
+$theme-base-color-error-light: #f36b6b !default;
+$theme-base-color-error-lighter: #fdf3f3 !default;
+$theme-base-color-error-dark: darken($theme-base-color-error, 15%) !default;
+
+$theme-base-color-warning: #ffc600 !default;
+$theme-base-color-warning-light: lighten($theme-base-color-warning, 15%) !default;
+$theme-base-color-warning-dark: darken($theme-base-color-warning, 15%) !default;
+
+$theme-base-color-background: #251C41 !default;
+$theme-base-color-background-light: lighten($theme-base-color-background, 15%) !default;
+$theme-base-color-background-dark: darken($theme-base-color-background, 15%) !default;
+
+// Greyscale
+$theme-base-greyscale-normal: #7b93af !default;
+$theme-base-greyscale-light: #B8C5D5 !default;
+$theme-base-greyscale-lighter: #F7F7F7 !default;
+$theme-base-greyscale-dark: darken($theme-base-greyscale-normal, 15%) !default;
+$theme-base-greyscale-darker: darken($theme-base-greyscale-normal, 30%) !default;
+
+// Font color
+$theme-font-color-primary: #434343 !default;
+$theme-font-color-primary-light: #808080 !default;
+$theme-font-color-primary-lighter: #9b9b9b !default;
+$theme-font-color-primary-dark: darken($theme-font-color-primary, 15%) !default;
+$theme-font-color-primary-darker: darken($theme-font-color-primary, 30%) !default;
+
+// Border color
+$theme-border-color-primary: #999 !default;
+$theme-border-color-primary-light: lighten($theme-border-color-primary, 15%) !default;
+$theme-border-color-primary-lighter: lighten($theme-border-color-primary, 30%) !default;
+$theme-border-color-primary-dark: darken($theme-border-color-primary, 15%) !default;
+$theme-border-color-primary-darker: darken($theme-border-color-primary, 30%) !default;
+
+$theme-border-color-secondary: #ffc526!default;
+$theme-border-color-secondary-light: lighten($theme-border-color-secondary, 15%) !default;
+$theme-border-color-secondary-lighter: lighten($theme-border-color-secondary, 30%) !default;
+$theme-border-color-secondary-dark: darken($theme-border-color-secondary, 15%) !default;
+$theme-border-color-secondary-darker: darken($theme-border-color-secondary, 30%) !default;
+
+$theme-border-color-tertiary: #333!default;
+$theme-border-color-tertiary-light: lighten($theme-border-color-tertiary, 15%) !default;
+$theme-border-color-tertiary-lighter: lighten($theme-border-color-tertiary, 30%) !default;
+$theme-border-color-tertiary-dark: darken($theme-border-color-tertiary, 15%) !default;
+$theme-border-color-tertiary-darker: darken($theme-border-color-tertiary, 30%) !default;
+
+$theme-border-color-transparent: transparent !default;

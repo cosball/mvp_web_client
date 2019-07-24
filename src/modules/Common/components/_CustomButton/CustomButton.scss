@@ -1,0 +1,58 @@
+.custom-button-wrapper {
+	position: relative;
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	cursor: pointer;
+
+	& .custom-button-inner-wrapper {
+		position: relative;
+		width: 100%;
+		padding: 5px 10px;
+		border-radius: 999px;
+		text-align: center;
+		color: $theme-base-color-lightest;
+		background-color: $theme-base-color-secondary;
+
+		&:hover {
+			background-color: $theme-base-color-secondary-dark;
+		}
+
+		&.inverse-color {
+			color: $theme-base-color-primary;
+			background-color: $theme-base-color-tertiary;
+
+			&:hover {
+				background-color: $theme-base-color-tertiary-dark;
+			}
+		}
+
+		& .content-side {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+
+			&>* {
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+			}
+		}
+
+		& .content-left {
+			left: 20px;
+		}
+
+		& .content-main {
+			font-size: 18px;
+		}
+
+		& .content-right {
+			right: 20px;
+		}
+	}
+}

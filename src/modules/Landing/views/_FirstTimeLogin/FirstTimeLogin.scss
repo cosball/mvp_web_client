@@ -1,0 +1,102 @@
+.first-time-login-wrapper {
+	background-image: url('~@/assets/img/background.webp');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	& .cosball-content {
+		color: $theme-base-color-lightest;
+		margin-top: 70px;
+		margin-bottom: 30px;
+
+		& p {
+			font-size: 1.5rem;
+			font-weight: 400;
+			color: $theme-base-color-lightest;
+			margin-bottom: 10px;
+		}
+
+		& h1 {
+			font-size: 3rem;
+			font-weight: 600;
+			color: $theme-base-color-tertiary;
+			margin-bottom: 10px;
+		}
+
+		& h5 {
+			font-size: 12px;
+			color: $theme-base-color-lightest;
+		}
+
+		& .g-recaptcha {
+			transform: scale(0.78);
+			transform-origin: 0 0;
+
+			@media (min-width: 320px) and (max-width: 480px) {
+				margin: 1rem 2.5rem;
+			}
+		}
+	}
+
+	& .cosball-emblem {
+		background-image: url('~@/assets/img/the-cosball-logo-electric-white.png');
+		width: 120px;
+		height: 120px;
+		float: left;
+		margin: 0px 10px;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	& .button-container {
+
+		& .add-button,
+		& .cancel-button {
+			width: auto;
+			margin: 10px
+		}
+
+		& .disabled {
+			& .custom-button-inner-wrapper {
+				background-color: $theme-font-color-primary-light;
+				color: $theme-base-color-lightest;
+
+				&.inverse-color {
+					&:hover {
+						background-color: $theme-font-color-primary !important;
+					}
+				}
+			}
+
+		}
+
+	}
+
+	& .custom-button-inner-wrapper {
+		padding: 10px;
+
+	}
+
+	@media (max-width: 991px) {
+
+		& .modal-footer {
+			display: block;
+
+			& .custom-button-wrapper {
+				width: 100%;
+				& .button-container {
+					display: block;
+
+					& .submit-button,
+					& .cancel-button {
+						width: 100%;
+						padding-top: 20px;
+					}
+
+				}
+			}
+
+
+		}
+	}
+}

@@ -1,0 +1,150 @@
+.signup-wrapper {
+	background-image: url('~@/assets/img/background.webp');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    transition-delay: 0.3s;
+
+    .header {
+        margin-top: 30px;
+        width: 100%;
+
+        & .modal-title {
+            margin-bottom: 15px;
+        }
+
+        & .required {
+            float: right;
+            margin-top: 30px
+        }
+
+		& button {
+			position: absolute;
+			right: 16px;
+		}
+    }
+
+    & .small-text {
+        margin-top: 10px;
+
+		& a {
+			color: $theme-base-color-tertiary;
+			margin-left: 5px;
+
+			&:hover {
+				color: $theme-base-color-tertiary-dark;
+			}
+		}
+
+		& p {
+            font-size: .85rem !important;
+			color: $theme-base-color-darkest;
+		}
+	}
+
+	& .cosball-content {
+		color: $theme-base-color-darkest;
+		margin-top: 70px;
+		margin-bottom: 30px;
+
+		& p {
+			font-size: 1.1rem;
+			font-weight: 400;
+			color: $theme-base-color-darkest;
+			margin-bottom: 10px;
+		}
+
+		& h1 {
+			font-size: 2.5rem;
+			font-weight: 600;
+			color: $theme-base-color-darkest;
+			margin-bottom: 10px;
+		}
+
+		& .verification-container {
+			& .term-and-policy{
+				padding: 15px;
+			}
+
+			& .g-recaptcha-holder {
+				display: flex;
+				justify-content: center;
+			}
+
+			@media (max-width: 768px) {
+				& .term-and-policy {
+					padding: 40px;
+				}
+
+				& .g-recaptcha{
+					padding: 1em 2em;
+				}
+			  }
+
+			& .signup-button {
+				width: 250px;
+				padding: 15px;
+				@media (max-width: 768px) {
+					& {
+						width: 100%;
+					}
+				}
+			}
+
+			& .disabled {
+				& .custom-button-inner-wrapper{
+					background-color: $theme-font-color-primary-light;
+					color: $theme-base-color-lightest;
+				}
+			}
+
+		}
+    }
+
+    & .form-body {
+		padding: 15px;
+
+		& label {
+			color: $theme-base-color-darkest;
+			font-size: 13px;
+			margin: 25px 0 10px;
+		}
+
+		& .custom-control-label {
+			margin-top: 0px;
+		}
+
+		& input,
+		& select {
+			border-color: #d29901;
+			box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 1px #d29901;
+			outline: 0 none;
+
+			&::placeholder {
+				color: $theme-font-color-primary-lighter;
+            }
+
+            & option {
+                &:focus{
+                    background-color: $theme-base-color-darkest;
+                }
+            }
+		}
+
+
+	}
+
+    @media (max-width: 991px) {
+        & .text-right {
+            text-align: left !important;
+        }
+        & .required {
+            float: none !important;
+        }
+
+	}
+	
+	& .datepicker-style  > div {
+		color:black
+	}
+}

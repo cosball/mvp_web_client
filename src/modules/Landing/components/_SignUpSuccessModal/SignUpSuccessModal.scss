@@ -1,0 +1,40 @@
+.sign-up-success-modal-wrapper {
+	& .icon {
+		color: $theme-base-color-success;
+		font-size: 100px;
+		text-align: center;
+	}
+
+	& .sign-up-success-container {
+		padding: 20px;
+		text-align: left;
+		color: $theme-base-color-lightest;
+
+		& .success-header-text {
+			color: $theme-base-color-tertiary;
+			font-size: $theme-font-size-large;
+			font-weight: 500;
+		}
+
+		& .go-homepage-text {
+			cursor: pointer;
+			font-size: $theme-font-size-xtra-small;
+			padding-top: 10px;
+
+			& .go-homepage-link {
+				color: $theme-base-color-tertiary;
+			}
+		}
+	}
+
+	& .ok-button {
+		width: 120px;
+	}
+
+	@media (max-width: 992px) {
+		& .ok-button {
+			width: 100%
+		}
+	}
+
+}

@@ -1,0 +1,74 @@
+.faq-wrapper {
+	background-image: url('~@/assets/img/popup-msg-big.png');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
+	& hr {
+		border-color: $theme-base-color-lightest;
+	}
+
+	& .cosball-content {
+		color: $theme-base-color-lightest;
+		margin-top: 48px;
+		margin-bottom: 30px;
+
+		& p {
+			font-size: 1.1rem;
+			font-weight: 400;
+			color: $theme-base-color-lightest;
+		}
+
+		& h1 {
+			font-size: 2rem;
+			font-weight: 600;
+			color: $theme-base-color-tertiary;
+		}
+	}
+
+	& .tabsection {
+		margin: 10px auto 50px;
+
+		& p {
+			font-size: 13px;
+			color: $theme-base-color-lightest;
+		}
+
+		& .link {
+			color: $theme-base-color-tertiary;
+			cursor: pointer;
+
+			&:hover {
+				color: $theme-base-color-tertiary-dark;
+			}
+		}
+
+		& a {
+			font-size: 13px;
+			color: $theme-base-color-primary;
+			background-color: $theme-base-color-tertiary;
+			text-align: left;
+			font-weight: 800;
+			padding: 13px;
+
+			&:hover {
+				background-color: $theme-base-color-tertiary-dark;
+				color: $theme-base-color-primary;
+			}
+
+			&:focus {
+				background-color: $theme-base-color-tertiary-dark;
+				color: $theme-base-color-primary;
+			}
+		}
+	}
+
+	& .card-header {
+		& .collapsed {
+			background-color: $theme-base-color-primary;
+			color: $theme-base-color-lightest;
+		}
+
+	}
+}

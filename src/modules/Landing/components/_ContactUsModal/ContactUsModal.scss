@@ -1,0 +1,76 @@
+.contactus-modal-wrapper {
+
+	& .header {
+		width: 100%;
+
+		& .modal-title {
+			display: inline;
+		}
+
+	}
+
+
+	& .base-modal {
+		& .modal-body {
+			padding: 0px 16px 20px;
+			max-height: 490px;
+		}
+
+		& .header {
+			& .modal-title {
+				font-size: 28px;
+				line-height: 1;
+			}
+		}
+	}
+
+
+
+	& .form-body {
+		padding: 15px;
+
+		& label {
+			color: $theme-base-color-lightest;
+			font-size: 13px;
+			margin: 10px 0;
+		}
+
+	}
+
+
+	@media (max-width: 512px) {
+
+		& .nav-tabs {
+			& .nav-item {
+				width: 100% !important;
+				text-align: center;
+			}
+		}
+
+	}
+
+	& .nav-tabs {
+		.nav-item {
+			width: 50%;
+		}
+
+		& .nav-link {
+			border: 0px solid $theme-base-color-transparent;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			color: $theme-base-color-lightest;
+			text-align: center;
+			display: block;
+			padding: 0.2rem 1rem;
+		}
+
+		& .nav-link.active,
+		& .nav-item.show {
+			color: $theme-base-color-primary;
+				background-color: $theme-base-color-tertiary;
+				border-color: $theme-border-color-secondary;
+		}
+
+	}
+
+}

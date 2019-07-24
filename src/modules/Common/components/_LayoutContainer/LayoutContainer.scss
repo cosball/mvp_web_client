@@ -1,0 +1,38 @@
+.layout-container-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    & .background-container {
+		position: absolute;
+		width: 100%;
+		height: 250px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+        z-index: 0;
+	}
+    
+    & .slot-wrapper {
+        position: relative;
+        z-index: 1;
+        overflow-x: hidden;
+        
+        &.header {
+            flex: none;
+        }
+        
+        &.body {
+            // overflow-y: scroll;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            flex: auto;
+            padding-bottom: 5em;
+        }
+    
+        &.footer {
+            flex: none;
+        }
+    }
+}

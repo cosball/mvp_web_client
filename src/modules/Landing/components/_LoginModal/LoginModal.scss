@@ -1,0 +1,171 @@
+.login-modal-wrapper {
+
+	& a {
+		color: $theme-base-color-tertiary;
+
+		&:hover {
+			color: $theme-base-color-tertiary-dark;
+		}
+	}
+
+	& p {
+		color: $theme-base-color-lightest;
+	}
+
+	& .header {
+		width: 100%;
+
+		& .modal-title {
+			display: inline;
+		}
+
+		& .required {
+			float: none;
+		}
+
+		& button {
+			position: absolute;
+			right: 16px;
+		}
+	}
+
+	& .small-text {
+		font-size: .65rem;
+
+		& a {
+			color: $theme-base-color-tertiary;
+			margin-left: 5px;
+
+			&:hover {
+				color: $theme-base-color-tertiary-dark;
+			}
+		}
+
+		& p {
+			color: $theme-base-color-lightest;
+		}
+	}
+
+	& .base-modal {
+
+		& .modal-header {
+			padding: 2.1em 2.1em 0.625em 2.1em;
+		}
+
+		& .modal-body {
+			padding: 0px 16px 20px;
+		}
+
+		& .header {
+			& .modal-title {
+				font-size: 35px;
+				line-height: 1;
+			}
+		}
+
+	}
+
+	& .custom-button-wrapper {
+		margin: 0 auto;
+
+		& .custom-button-inner-wrapper {
+
+			& .content-main {
+				font-weight: 600;
+			}
+		}
+	}
+
+	& .form-body {
+		padding: 15px 15px 0px;
+
+		& label {
+			color: $theme-base-color-lightest;
+			font-size: 13px;
+			margin: 10px 0;
+		}
+	}
+
+	& .modal-footer {
+		justify-content: center;
+		padding: 0px 16px 16px;
+
+		& :not(:last-child),
+		:not(:first-child) {
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		& .button-container {
+			display: block;
+
+			& .disabled {
+				& .custom-button-inner-wrapper {
+					background-color: $theme-font-color-primary-light;
+					color: $theme-base-color-lightest;
+				}
+			}
+
+		}
+
+	}
+
+	& .g-recaptcha {
+		transform:scale(0.78);
+		transform-origin:0 0;
+	}
+
+	@media (max-width: 512px) {
+
+		& .small-text {
+
+			& p {
+				color: $theme-base-color-lightest;
+			}
+		}
+
+		& .base-modal {
+
+			& .modal-header {
+				padding: 2.1em 2.1em 0.625em 2.1em;
+			}
+
+			& .modal-body {
+				padding: 0px 16px 20px;
+				min-height: 190px;
+			}
+
+			& .header {
+				& .modal-title {
+					font-size: 25px;
+					line-height: 1;
+				}
+			}
+
+		}
+
+	}
+
+	@media (max-width: 991px) {
+
+		& .base-modal {
+
+			& .modal-header {
+				padding: 2.1em 2.1em 0.625em 2.1em;
+			}
+
+			& .modal-body {
+				padding: 0px 16px 20px;
+				min-height: 190px;
+			}
+
+			& .header {
+				& .modal-title {
+					font-size: 25px;
+					line-height: 1;
+				}
+			}
+		}
+
+	}
+}

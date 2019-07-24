@@ -1,0 +1,26 @@
+.menu-pane-wrapper {
+	& .sidebar {
+
+        & .row-item-wrapper  {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: $theme-font-size-small;
+            cursor: pointer;
+            &:hover {
+                background-color: #7B93AF
+            }
+            &.active {
+                color: #0C0032;
+                background-color: #FFC526;
+                & :hover {
+                    color: inherit;
+                    background-color: inherit;
+                }
+
+            }
+        }
+	}
+}

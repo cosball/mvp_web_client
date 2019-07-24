@@ -1,0 +1,51 @@
+.landing-header-wrapper {
+	& .navbar-header {
+		background-color: $theme-base-color-transparent;
+		border-color: $theme-border-color-transparent;
+		padding-right: 25px;
+		padding-left: 0px;
+
+		& .navbar-brand {
+			padding-top: 0;
+			padding-bottom: 0;
+			cursor: pointer;
+		}
+
+		& .navbar-toggler {
+			border-color: $theme-border-color-tertiary;
+
+			&:hover,
+			&:focus {
+				background-color: $theme-border-color-tertiary;
+			}
+		}
+
+		& .navbar-toggler-icon {
+			background-image: url('~@/assets/img/hamburger-menu.png');
+		}
+
+		& .header-logo {
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url('~@/assets/img/logo.png');
+			margin-top: 10px;
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	& .custom-button-wrapper {
+		margin: 0 5px;
+
+		& .custom-button-inner-wrapper {
+			min-width: 150px !important;
+			padding: .375rem .75rem;
+			margin: 10px;
+
+			& .content-main {
+				font-size: 1rem !important;
+			}
+		}
+	}
+}

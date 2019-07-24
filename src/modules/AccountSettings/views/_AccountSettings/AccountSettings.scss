@@ -1,0 +1,132 @@
+.account-settings-wrapper {
+	& .body {
+		background-color: $theme-base-color-background;
+
+		& .account-settings-content {
+			padding: 30px 50px;
+
+			& .account-header-container {
+				padding-bottom: 15px;
+
+				& .header {
+					color: $theme-base-color-lightest;
+					font-weight: 500;
+				}
+
+				& .go-back {
+					color: $theme-base-color-tertiary;
+					cursor: pointer;
+					font-size: $theme-font-size-xtra-small;
+					padding-top: 10px;
+
+					& .arrow-icon {
+						margin-right: 5px;
+					}
+				}
+			}
+
+			& .error-container {
+				& .error-message {
+					background-color: $theme-base-color-error;
+					padding: 10px 15px;
+					border-radius: 5px;
+					margin-bottom: 10px;
+					font-size: $theme-font-size-xtra-small;
+					color: $theme-base-color-lightest;
+
+					&.hidden {
+						visibility: hidden;
+					}
+
+					& .icon {
+						text-align: right;
+						cursor: pointer;
+					}
+
+				}
+
+			}
+
+			& .account-container {
+				color: $theme-base-color-lightest;
+				font-size: $theme-font-size-xtra-small;
+				padding-top: 10px;
+
+				& .account-icon-container {
+
+					width: 120px;
+
+					& .account-icon,
+					& .profile-image {
+						background-repeat: no-repeat;
+						background-size: cover;
+						background-image: url('~@/assets/img/acc-settings.png');
+						width: 120px;
+						height: 120px;
+					}
+
+					& .profile-image {
+						border-radius: 20px;
+					}
+
+					& .reset-button,
+					& .browse-button,
+					& .submit-button {
+						width: 120px;
+						padding-top: 10px;
+
+						& .custom-button-inner-wrapper {
+							padding: 2px 0;
+						}
+
+						& .content-main {
+							font-size: 10px;
+						}
+					}
+
+					& .reset-button {
+						color: $theme-base-color-lightest;
+					}
+
+					& .browse-button {
+						& .custom-button-inner-wrapper {
+							background-color: $theme-font-color-primary-light;
+							color: $theme-base-color-lightest;
+
+							& .content-left {
+								left: 12px;
+								top: 12px;
+							}
+
+							&:hover {
+								background-color: $theme-font-color-primary;
+							}
+						}
+					}
+
+					& .input-file {
+						display: none;
+					}
+				}
+
+				@media (max-width: 768px) {
+					& .set-profile-to-center {
+						display: flex;
+						justify-content: center;
+					}
+				}
+
+				& .account-informations {
+					& .row {
+						padding-top: 7px;
+						padding-bottom: 7px;
+
+						& .value {
+							color: $theme-base-color-tertiary;
+						}
+					}
+				}
+			}
+		}
+	}
+}

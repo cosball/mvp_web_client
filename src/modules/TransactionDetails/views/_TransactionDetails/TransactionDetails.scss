@@ -1,0 +1,57 @@
+.transaction-details-wrapper {
+	& .body {
+		background-color: $theme-base-color-background;
+
+		& .block-details-content {
+			padding: 30px 50px;
+
+			& .header-container {
+				& .header {
+					color: $theme-base-color-lightest;
+					font-weight: 500;
+				}
+
+				& .go-back {
+					color: $theme-base-color-tertiary;
+					cursor: pointer;
+					font-size: $theme-font-size-xtra-small;
+				}
+			}
+		}
+
+		& .transaction-container {
+			padding-top: 30px;
+			& .row {
+				padding: 5px 0px;
+				margin: 5px 0;
+				font-size: $theme-font-size-small;
+			}
+		}
+
+		& .transaction-container {
+
+			& .label {
+				color: $theme-base-color-lightest;
+				user-select: text;
+			}
+
+			& .value {
+				color: $theme-base-color-tertiary;
+				word-break: break-all;
+				user-select: text;
+			}
+
+			& .row:nth-child(odd) {
+				background: #35314D;
+				&.gray-container {
+					background: #716C81;
+				}
+			}
+
+			& .row:nth-child(even) {
+				background: #716C81;
+
+			}
+		}
+	}
+}

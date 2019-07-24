@@ -1,0 +1,28 @@
+.upper-case {
+	text-transform: uppercase;
+}
+
+.lower-case {
+	text-transform: lowercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+ }
+
+ .required {
+    color: $theme-base-color-error-light;
+ }
+
+ .error {
+    color: $theme-base-color-error;
+    font-style: italic;
+    font-size: 10px;
+    font-weight: 700;
+ }
