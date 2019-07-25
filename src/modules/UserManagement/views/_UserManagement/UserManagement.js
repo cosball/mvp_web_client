@@ -45,11 +45,6 @@ export default {
 					sortable: true
 				},
 				{
-					key: 'institutionShortName',
-					label: 'Company Name',
-					sortable: true
-				},
-				{
 					key: 'contactNo',
 					label: 'Contact Number',
 					sortable: true

@@ -16,7 +16,6 @@ export default {
 	},
 	props: {},
 	data() {
-		console.log(this.$store.state)
 		return {
 			title: 'View Skin Data',
 			inputs: {

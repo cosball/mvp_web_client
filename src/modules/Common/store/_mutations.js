@@ -20,9 +20,6 @@ export default {
     SHOW_BASE_LOADER: (state, isActive) => {
       state.isBaseLoaderActive = isActive
     },
-    SET_INSTITUTIONS_LIST: (state, institutionsList) => {
-      state.institutionsList = institutionsList
-    },
     SET_ROLE_LIST: (state, roleList) => {
       state.roleList = roleList
     },

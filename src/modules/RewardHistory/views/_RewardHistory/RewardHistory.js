@@ -40,9 +40,6 @@ export default {
 				}, {
 					text: 'Reason',
 					value: 'reason'
-				}, {
-					text: 'Node',
-					value: 'institutionShortName'
 				}],
 				selectedFilterField: ''
 			},
@@ -117,7 +114,6 @@ export default {
 				this.$store.dispatch('SkinData/GET_SKINDATA_LIST', this.filterQuery)
 					.then((result) => {
 						// this.filteredSkinData = cloneDeep(result)
-						this.filteredSkinData = [{ createdAt: '2019-06-25T06:49:23.477Z', id: '5d3564cf0a22363414ad05ea', userId: '5d11b4584e6112328af2eba9', institutionId: '5cff9df764c1a615a60b59fd', type: 'SkinData', amount: '3' }, { createdAt: '2019-06-24T06:49:23.477Z', id: '5d3566350a22363414ad05ec', userId: '5d11b4584e6112328af2eba9', institutionId: '5cff9df764c1a615a60b59fd', type: 'SkinData', amount: '2' }, { createdAt: '2019-06-23T06:49:23.477Z', id: '5d35663e0a22363414ad05ed', userId: '5d11b4584e6112328af2eba9', institutionId: '5cff9df764c1a615a60b59fd', type: 'SkinData', amount: '1' }, { createdAt: '2019-06-22T06:49:23.477Z', id: '5d35663e0a22363414ad05ed', userId: '5d11b4584e6112328af2eba9', institutionId: '5cff9df764c1a615a60b59fd', type: 'SignUp', amount: '1' }]
 						this.resetTablePagination()
 						this.setDefaultFilterValue()
 						this.$store.commit('Common/SHOW_BASE_LOADER', false)

@@ -21,7 +21,6 @@ export default {
 		return new Promise((resolve, reject) => {
 			SkinDataApi.addSkinDataData(skindataObj.address, RequestMappingService.mapSkinData(skindataObj), rootState.AccountSettings.account.username)
 				.then((response) => {
-					commit('AccountSettings/SET_ACCOUNT_ADD_SKINDATA_COUNT', response.addSkinDataCount, {root: true})
 					resolve(response)
 				}, () => {
 					reject('Failed to add skindata')

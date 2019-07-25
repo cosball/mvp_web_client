@@ -36,7 +36,7 @@ export default {
 	computed: {
 		isComplete() {
 			let isValid = true
-			console.log(this.inputs.signup)
+			// console.log(this.inputs.signup)
 			Object.keys(this.inputs.signup).forEach((key) => {
 				// console.log('KEY:' + key + ', : ' + this.inputs.signup[key])
 				if (['email', 'country', 'race', 'dob', 'gender'].indexOf(key) !== -1 && !this.inputs.signup[key]) {
@@ -53,21 +53,11 @@ export default {
 				signup: {
 					email: '',
 					country: '',
-					race: '',
+					raceId: '',
 					dob: '',
 					gender: '',
-					freckles: false,
-					wrinkles: false,
-					pore: false,
-					oilySkin: false,
-					drySkin: false,
-					pimples: false,
-					skinTrouble: false,
-					corneum: false,
-					itching: false,
-					creator: 'webadmin2', // Username of WebAdmin2
-					userId: '5d072f3e70fd102cb69eb4d5', // UserID of Webadmin2
-					institutionId: '5cff9df764c1a615a60b59fd', // Institution ID of WebAdmin2
+					toImprove: [],
+					ongoingProblems: []
 				}
 			},
 			termAndPolicy: 'false',
@@ -112,9 +102,7 @@ export default {
 					}
 				)
 				Object.keys(this.inputs.signup).forEach((key) => {
-					if (key !== 'creator' && key !== 'userId' && key !== 'institutionId') {
-						this.inputs.signup[key] = ''
-					}
+					this.inputs.signup[key] = ''
 				})
 				this.termAndPolicy = 'false'
 				this.$refs.recaptcha.reset()

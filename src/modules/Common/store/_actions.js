@@ -3,8 +3,7 @@ import {
 } from '@/modules/Common/api/apiRequest'
 
 import {
-	RouteService,
-	RequestMappingService
+	RouteService
 } from '@/modules/Common/services/'
 
 export default {
@@ -33,41 +32,6 @@ export default {
 				})
 		})
     },
-    GET_INSTITUTIONS_LIST: ({commit, state, rootState}, userId) => {
-		return new Promise((resolve, reject) => {
-			CommonApi.getInstitutionsList()
-				.then((response) => {
-					commit('SET_INSTITUTIONS_LIST', response)
-					resolve()
-				}, () => {
-					reject('Failed GET_INSTITUTIONS_LIST')
-				})
-		})
-	},
-	GET_CONFIG_LIMIT: ({commit, state, rootState}) => {
-		return new Promise((resolve, reject) => {
-			CommonApi.getUploadConfigLimit(rootState.AccountSettings.account.username)
-				.then((response) => {
-					let config = RequestMappingService.mapConfigLimitData(rootState.AccountSettings.account.username, response)
-					commit('SET_DEFAULT_ADD_SKINDATA', config.addSkinDataLimit)
-					commit('SET_DEFAULT_UPLOAD_SKINDATA', config.upSkinDataLimit)
-					resolve()
-				}, () => {
-					reject('Failed GET_CONFIG_LIMIT')
-				})
-		})
-	},
-	GET_CRYPTO_CURRENCY_LIST: ({commit, state, rootState}) => {
-		return new Promise((resolve, reject) => {
-			CommonApi.getCryptoCurrencyList()
-				.then((response) => {
-					commit('SET_CRYPTO_CURRENCY_LIST', response)
-					resolve()
-				}, () => {
-					reject('Failed GET_CRYPTO_CURRENCY_LIST')
-				})
-		})
-	},
 	GET_ROLE_LIST: ({commit, state, rootState}, userId) => {
 		return new Promise((resolve, reject) => {
 			let roleList = []
@@ -102,7 +66,7 @@ export default {
 	},
 	GET_NEM_STATS: ({commit, state, rootState}) => {
 		return new Promise((resolve, reject) => {
-			CommonApi.getNEMStatistics(rootState.AccountSettings.account.institutionId)
+			CommonApi.getNEMStatistics()
 				.then((res) => {
 					resolve(res)
 				}, () => {
@@ -112,7 +76,7 @@ export default {
 	},
     GET_SKINDATA_DASHBOARD: ({commit, state, rootState}) => {
 		return new Promise((resolve, reject) => {
-			CommonApi.getSkinDataDashboard(rootState.AccountSettings.account.institutionId)
+			CommonApi.getSkinDataDashboard()
 				.then((res) => {
 					resolve(res)
 				}, () => {

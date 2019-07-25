@@ -41,7 +41,7 @@ export default {
 	computed: {
 		isComplete() {
 			let isValid = true
-			console.log(this.inputs.skindata)
+			// console.log(this.inputs.skindata)
 			Object.keys(this.inputs.skindata).forEach((key, value) => {
 				if (!this.inputs.skindata[key]) {
 					isValid = false

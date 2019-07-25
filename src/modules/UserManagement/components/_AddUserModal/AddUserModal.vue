@@ -111,36 +111,6 @@
             <b-col md="6">
               <b-row>
                 <b-col md="12">
-                  <label class="mr-sm-2">
-                    Company Name
-                    <span class="required">*</span>
-                  </label>
-                  <b-form-select
-                    data-vv-as="Company Name"
-                    v-model="inputs.user.institutionId"
-                    placeholder="Company name"
-                    class="mb-2 mr-sm-2 mb-sm-0"
-                    name="companyName"
-                    :value="null"
-                    :options="institutionList"
-                    @change="onInstitutionIdChange"
-                  >
-                    <template slot="first">
-                      <option :value="null" disabled>Select Company</option>
-                    </template>
-                  </b-form-select>
-                  <span class="error">{{errors.first('companyName')}}</span>
-                </b-col>
-                <b-col md="12">
-                  <label class="mr-sm-2">Company Address</label>
-                  <b-input
-                    v-model="inputs.user.institutionAddress"
-                    placeholder="Company address"
-                    class="mb-2 mr-sm-2 mb-sm-0"
-                    readonly
-                  ></b-input>
-                </b-col>
-                <b-col md="12">
                   <label class="mr-sm-2" for="contactNumber">
                     Contact Number
                     <span class="required">*</span>

@@ -98,14 +98,6 @@
                 </b-row>
               </b-col>
             </b-row>
-            <b-row>
-              <b-col>
-                <div
-                  class="error"
-                  v-if="blockAddingSkinData"
-                >You have reached add skindata limit. Kindly contact support for assistance.</div>
-              </b-col>
-            </b-row>
           </section>
         </div>
       </template>

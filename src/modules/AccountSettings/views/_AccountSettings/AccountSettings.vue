@@ -90,7 +90,7 @@
                     md="8"
                     lg="9"
                     xl="10"
-                  >{{'Korea' || '-'}}</b-col>
+                  >{{$store.state.AccountSettings.account.country || '-'}}</b-col>
                 </b-row>
                 <b-row>
                   <b-col cols="12" md="4" lg="3" xl="2">Race/Ethnicity:</b-col>
@@ -100,7 +100,7 @@
                     md="8"
                     lg="9"
                     xl="10"
-                  >{{'North East Asian (Mongol, Tibetan, Korean Japanese, etc)' || '-'}}</b-col>
+                  >{{textRace || '-'}}</b-col>
                 </b-row>
                 <b-row>
                   <b-col cols="12" md="4" lg="3" xl="2">Date of Birth:</b-col>
@@ -110,17 +110,7 @@
                     md="8"
                     lg="9"
                     xl="10"
-                  >{{'1977-04-15' || '-'}}</b-col>
-                </b-row>
-                <b-row>
-                  <b-col cols="12" md="4" lg="3" xl="2">Total Coin:</b-col>
-                  <b-col
-                    class="value"
-                    cols="12"
-                    md="8"
-                    lg="9"
-                    xl="10"
-                  >{{'7' || '-'}}</b-col>
+                  >{{$store.state.AccountSettings.account.dob || '-'}}</b-col>
                 </b-row>
                 <b-row>
                   <b-col cols="12" md="4" lg="3" xl="2">Gender:</b-col>
@@ -130,7 +120,7 @@
                     md="8"
                     lg="9"
                     xl="10"
-                  >{{'Male' || '-'}}</b-col>
+                  >{{$store.state.AccountSettings.account.gender || '-'}}</b-col>
                 </b-row>
                 <b-row>
                   <b-col cols="12" md="4" lg="3" xl="2">What do you want to improve?:</b-col>
@@ -140,7 +130,7 @@
                     md="8"
                     lg="9"
                     xl="10"
-                  >{{'Wrinkles,Pore/Elasticity' || '-'}}</b-col>
+                  >{{$store.state.AccountSettings.account.toImprove ? $store.state.AccountSettings.account.toImprove.join(', ') : '-'}}</b-col>
                 </b-row>
                 <b-row>
                   <b-col cols="12" md="4" lg="3" xl="2">Current ongoing skin problems:</b-col>
@@ -150,7 +140,18 @@
                     md="8"
                     lg="9"
                     xl="10"
-                  >{{'Pimples,Corneum,Itching' || '-'}}</b-col>
+                  >{{$store.state.AccountSettings.account.ongoingProblems ? $store.state.AccountSettings.account.ongoingProblems.join(', ') : '-'}}</b-col>
+                </b-row>
+                <br>
+                <b-row>
+                  <b-col cols="12" md="4" lg="3" xl="2">Total Coin:</b-col>
+                  <b-col
+                    class="value"
+                    cols="12"
+                    md="8"
+                    lg="9"
+                    xl="10"
+                  >{{'7' || '-'}}</b-col>
                 </b-row>
               </b-col>
             </b-row>

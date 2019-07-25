@@ -46,7 +46,7 @@
                         Race/Ethnicity
                         <span class="required">*</span>
                       </label>
-                      <b-form-select v-model="inputs.signup.race" :options="raceData"></b-form-select>
+                      <b-form-select v-model="inputs.signup.raceId" :options="raceData"></b-form-select>
                     </b-col>
                   </b-row>
                 </b-col>
@@ -88,12 +88,12 @@
             <b-col md="12">
               <label class="mr-sm-12">What you want to improve?</label>
               <b-form-group>
-                <b-form-checkbox-group>
-                  <b-form-checkbox v-model="inputs.signup.freckles" value="freckles">Freckles/Pigmentation</b-form-checkbox>
-                  <b-form-checkbox v-model="inputs.signup.wrinkles" value="wrinkles">Wrinkles</b-form-checkbox>
-                  <b-form-checkbox v-model="inputs.signup.pore" value="pore">Pore/Elasticity</b-form-checkbox>
-                  <b-form-checkbox v-model="inputs.signup.oilySkin" value="oilySkin">Oily skin</b-form-checkbox>
-                  <b-form-checkbox v-model="inputs.signup.drySkin" value="drySkin">Dry skin</b-form-checkbox>
+                <b-form-checkbox-group v-model="inputs.signup.toImprove">
+                  <b-form-checkbox value="Freckles/Pigmentation">Freckles/Pigmentation</b-form-checkbox>
+                  <b-form-checkbox value="Wrinkles">Wrinkles</b-form-checkbox>
+                  <b-form-checkbox value="Pore/Elasticity">Pore/Elasticity</b-form-checkbox>
+                  <b-form-checkbox value="Oily skin">Oily skin</b-form-checkbox>
+                  <b-form-checkbox value="Dry skin">Dry skin</b-form-checkbox>
                 </b-form-checkbox-group>
               </b-form-group>
             </b-col>
@@ -103,11 +103,11 @@
             <b-col md="12">
               <label class="mr-sm-12">Current ongoing skin problems</label>
               <b-form-group>
-                <b-form-checkbox-group>
-                  <b-form-checkbox v-model="inputs.signup.pimples" value="pimples">Pimples</b-form-checkbox>
-                  <b-form-checkbox v-model="inputs.signup.skinTrouble" value="skinTrouble">Skin trouble</b-form-checkbox>
-                  <b-form-checkbox v-model="inputs.signup.corneum" value="corneum">Corneum</b-form-checkbox>
-                  <b-form-checkbox v-model="inputs.signup.itching" value="itching">Itching</b-form-checkbox>
+                <b-form-checkbox-group v-model="inputs.signup.ongoingProblems">
+                  <b-form-checkbox value="pimples">Pimples</b-form-checkbox>
+                  <b-form-checkbox value="Skin trouble">Skin trouble</b-form-checkbox>
+                  <b-form-checkbox value="Corneum">Corneum</b-form-checkbox>
+                  <b-form-checkbox value="Itching">Itching</b-form-checkbox>
                 </b-form-checkbox-group>
               </b-form-group>
             </b-col>

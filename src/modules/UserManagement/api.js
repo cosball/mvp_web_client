@@ -5,7 +5,7 @@ import {
 import store from '@/store'
 const UserManagementApi = {
 	getUserManagementList() {
-		let url = store.state.AccountSettings.account.roleType === 'Super' ? 'users' : `institutions/${store.state.AccountSettings.account.institutionId}/users`
+		let url = store.state.AccountSettings.account.roleType === 'Super' ? 'users' : `institutions/institutionId/users`
 		return new Promise((resolve, reject) => {
 			WebAdminRestRequest.get(url).then((res) => {
 				resolve(res)

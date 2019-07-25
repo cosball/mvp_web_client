@@ -26,15 +26,21 @@ export default {
 			fileObject: null,
 			S3Client: AwsService.uploadFileS3('Profile-Images'),
 			account: {
-				institutionAddress: '',
-				institutionName: ''
-			}
+			},
+			textRace: ''
 		}
 	},
-	mounted() {
-		let obj = this.$store.state.Common.institutionsList.filter((value) => value.id === this.$store.state.AccountSettings.account.institutionId)
-		this.account.institutionAddress = obj && obj.length > 0 ? obj[0].institutionAddress : ''
-		this.account.institutionName = obj && obj.length > 0 ? obj[0].institutionName : ''
+	created() {
+		Promise.all([this.$store.dispatch('Common/GET_RACE_DATA')]).then((results) => {
+			for (let elm of results[0].data) {
+				if (elm.value === this.$store.state.AccountSettings.account.raceId) {
+					this.textRace = elm.text
+					break
+				}
+			}
+			return Promise.resolve()
+		}).then(() => {
+		})
 	},
 	methods: {
 		goBack() {

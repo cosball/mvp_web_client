@@ -34,22 +34,18 @@ export default {
 			title: 'Edit User',
 			inputs: {
 				user: {
-					firstname: this.$store.state.UserManagement.user.firstname,
-					lastname: this.$store.state.UserManagement.user.lastname,
 					email: this.$store.state.UserManagement.user.email,
 					username: this.$store.state.UserManagement.user.username,
-					institutionId: this.$store.state.UserManagement.user.institutionId,
-					institutionAddress: this.$store.state.UserManagement.user.institutionAddress,
-					institutionName: this.$store.state.UserManagement.user.institutionName,
-					institutionShortName: this.$store.state.UserManagement.user.institutionShortName,
-					posTitle: this.$store.state.UserManagement.user.posTitle,
-					roleType: this.$store.state.UserManagement.user.roleType,
-					contactNo: this.$store.state.UserManagement.user.contactNo
+					country: this.$store.state.UserManagement.user.country,
+					raceId: this.$store.state.UserManagement.user.raceId,
+					dob: this.$store.state.UserManagement.user.dob,
+					gender: this.$store.state.UserManagement.user.gender,
+					toImprove: this.$store.state.UserManagement.user.toImprove,
+					ongoingProblems: this.$store.state.UserManagement.user.ongoingProblems,
+					roleType: this.$store.state.UserManagement.user.roleType
 				}
 			},
-			roleList: this.$store.state.Common.roleList,
-			originalInstitutionList: [],
-			institutionList: []
+			roleList: this.$store.state.Common.roleList
 		}
 	},
 	methods: {
@@ -84,12 +80,6 @@ export default {
 				}
 			})
 		},
-		onInstitutionIdChange() {
-			let obj = this.originalInstitutionList.find((element) => element.id === this.inputs.user.institutionId)
-			this.inputs.user.institutionAddress = obj.institutionAddress
-			this.inputs.user.institutionName = obj.institutionName
-			this.inputs.user.institutionShortName = obj.institutionShortName
-		},
 		closeModal() {
 			this.$store.commit('UserManagement/SET_USER_MANAGEMENT_DATA_UPDATED', false)
 			this.$store.commit('UserManagement/SET_USER', {})
@@ -97,14 +87,6 @@ export default {
 		}
 	},
 	mounted() {
-		this.originalInstitutionList = this.$store.state.Common.institutionsList
-		this.institutionList = this.originalInstitutionList.map((value, key) => {
-			return {
-				text: value.institutionName,
-				value: value.id
-			}
-		})
-		this.onInstitutionIdChange()
 		EventBusService.$on('CLOSE_CUSTOM_MODAL', this.closeModal)
 	},
 	beforeDestroy() {

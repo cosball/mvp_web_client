@@ -29,7 +29,6 @@ const defaultState = {
 	isHeaderPaneActive: false,
 	isBaseLoaderActive: false,
 	appAuthorityList: [],
-	institutionsList: [],
 	roleList: [],
 	roles: [{
 		text: 'Admin',

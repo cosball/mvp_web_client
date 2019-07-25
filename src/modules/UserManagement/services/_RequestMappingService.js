@@ -4,17 +4,17 @@ import store from '@/store'
 const _service = {
 	mapUserData: function mapUserData(user) {
 		return {
-			firstname: user.firstname,
-            lastname: user.lastname,
+			email: user.email,
             username: user.username,
-            institutionShortName: user.institutionShortName,
-            posTitle: user.posTitle,
+            country: user.country,
+            raceId: user.raceId,
+            dob: user.dob,
+            gender: user.gender,
+            toImprove: user.toImprove,
+            ongoingProblems: user.ongoingProblems,
 			roleType: user.roleType,
             createdAt: new Date(),
             creator: store.state.AccountSettings.account.username,
-            institutionId: user.institutionId,
-            email: user.email,
-            contactNo: user.contactNo
 		}
 	}
 }
