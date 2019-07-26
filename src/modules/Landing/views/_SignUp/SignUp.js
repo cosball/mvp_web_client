@@ -36,7 +36,7 @@ export default {
 	computed: {
 		isComplete() {
 			let isValid = true
-			// console.log(this.inputs.signup)
+			console.log(this.inputs.signup)
 			Object.keys(this.inputs.signup).forEach((key) => {
 				// console.log('KEY:' + key + ', : ' + this.inputs.signup[key])
 				if (['email', 'country', 'race', 'dob', 'gender'].indexOf(key) !== -1 && !this.inputs.signup[key]) {
@@ -64,7 +64,12 @@ export default {
 			recaptchaToken: '',
 			recaptcha_sitekey: process.env.VUE_APP_SITEKEY,
 			countryList: {},
-			raceData: {}
+			raceData: {},
+			datepickerOptions: {
+				disabledDates: {
+					from: new Date()
+				}
+			}
 		}
 	},
 	methods: {
@@ -83,6 +88,7 @@ export default {
 			if (!this.isComplete) return
 			this.$validator.validateAll().then(result => {
 				if (result) {
+					this.inputs.signup.dob = moment(this.inputs.signup.dob).format('YYYY-MM-DD')
 					this.submit()
 				}
 			})

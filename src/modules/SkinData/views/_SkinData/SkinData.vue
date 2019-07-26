@@ -88,7 +88,6 @@
               <b-col lg="3" md="12">
                 <custom-button
                   class="add-button"
-                  v-bind:class="{ 'disabled': blockAddingSkinData }"
                   @click="addNewSkinData"
                   :inverseColor="true"
                 >Add</custom-button>

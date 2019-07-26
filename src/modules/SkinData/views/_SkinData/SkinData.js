@@ -88,9 +88,6 @@ export default {
 		}
 	},
 	computed: {
-		blockAddingSkinData() {
-			return !(this.$store.state.AccountSettings.account.addSkinDataCount < (this.$store.state.Common.addSkinDataLimit + 1))
-		}
 	},
 	mounted() {
 		if (this.$route.params.address) {

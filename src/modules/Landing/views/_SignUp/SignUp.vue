@@ -66,6 +66,7 @@
                         class="datepicker-style"
                         :bootstrap-styling="true"
                         :format="customFormatter"
+                        :disabled-dates="datepickerOptions.disabledDates"
                       ></datepicker>
                     </b-col>
                     <b-col md="6">
@@ -73,7 +74,7 @@
                         Gender
                         <span class="required">*</span>
                       </label>
-                      <b-form-radio-group v-model="inputs.signup.gender">
+                      <b-form-radio-group v-model="inputs.signup.gender" class="boxBackground">
                         <b-form-radio name="gender" value="M">Male</b-form-radio>
                         <b-form-radio name="gender" value="F">Female</b-form-radio>
                       </b-form-radio-group>
