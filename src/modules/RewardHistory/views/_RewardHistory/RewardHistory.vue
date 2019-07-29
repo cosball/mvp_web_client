@@ -63,14 +63,14 @@
                   hover
                   show-empty
                   responsive
-                  :items="filteredSkinData"
+                  :items="filteredRewardHistory"
                   :fields="fields"
                   :current-page="currentPage"
                   :per-page="perPage"
                   table-class="skindata-table"
                 >
-                  <template slot="createdAt" slot-scope="row">
-                    <div>{{row.value | formatDate('YYYY-MM-DD kk:mm:ss')}}</div>
+                  <template slot="deadline" slot-scope="row">
+                    <div class="link" @click="goToTransactionDetails(row.item)">{{row.value | formatDate('YYYY-MM-DD kk:mm:ss')}}</div>
                   </template>
                 </b-table>
               </b-col>

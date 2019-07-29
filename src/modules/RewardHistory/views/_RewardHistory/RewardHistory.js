@@ -10,15 +10,13 @@ import {
 } from '@/modules/Common/services'
 
 import {
-	AddSkinDataModal,
-	ViewSkinDataModal
-} from '@/modules/SkinData/components'
+} from '@/modules/RewardHistory/components'
 
 // import {
 // 	cloneDeep
 // } from 'lodash'
 
-let filterSkinDataCallback = null
+let filterRewardHistoryCallback = null
 
 export default {
 	name: 'RewardHistory',
@@ -45,15 +43,15 @@ export default {
 			},
 			pageOptions: PaginationTableService.getRecordsPerPage(),
 			currentPage: 1,
-			filteredSkinData: [],
+			filteredRewardHistory: [],
 			fields: [
 				{
-					key: 'createdAt',
+					key: 'deadline',
 					label: 'Date/Time',
 					sortable: true
 				},
 				{
-					key: 'type',
+					key: 'message.tx_type',
 					label: 'Reward Type',
 					sortable: true
 				},
@@ -73,24 +71,21 @@ export default {
 		}
 	},
 	computed: {
-		blockAddingSkinData() {
-			return !(this.$store.state.AccountSettings.account.addSkinDataCount < (this.$store.state.Common.addSkinDataLimit + 1))
-		}
 	},
 	mounted() {
 		if (this.$route.params.address) {
-			this.triggerSkinDataFilterViaParam(this.$route.params)
+			this.triggerRewardHistoryFilterViaParam(this.$route.params)
 		} else {
-			this.triggerSkinDataFilterViaParam(null)
+			this.triggerRewardHistoryFilterViaParam(null)
 		}
-		filterSkinDataCallback = (payload) => {
+		filterRewardHistoryCallback = (payload) => {
 			console.log()
-			this.triggerSkinDataFilterViaParam(payload)
+			this.triggerRewardHistoryFilterViaParam(payload)
 		}
-		EventBusService.$on('TRIGGER_SKINDATA_FILTER', filterSkinDataCallback)
+		EventBusService.$on('TRIGGER_SKINDATA_FILTER', filterRewardHistoryCallback)
 	},
 	methods: {
-		triggerSkinDataFilterViaParam(params) {
+		triggerRewardHistoryFilterViaParam(params) {
 			if (params && params.address) {
 				this.filter.filterByList = []
 				this.filter.filterByList.push({
@@ -103,17 +98,17 @@ export default {
 						fieldLabel: this.filter.filterFieldOptionsList.find((item) => item.value === 'addressType').text
 					})
 				this.setDefaultFilterValue()
-				this.filterSkinDataTable()
+				this.filterRewardHistoryTable()
 			} else {
-				this.getSkinData()
+				this.getNEMTransactions()
 			}
 		},
-		getSkinData() {
+		getNEMTransactions() {
 			return new Promise((resolve, reject) => {
 				this.$store.commit('Common/SHOW_BASE_LOADER', true)
-				this.$store.dispatch('SkinData/GET_SKINDATA_LIST', this.filterQuery)
+				this.$store.dispatch('RewardHistory/GET_TRANS_LIST', this.filterQuery)
 					.then((result) => {
-						// this.filteredSkinData = cloneDeep(result)
+						this.filteredRewardHistory = result
 						this.resetTablePagination()
 						this.setDefaultFilterValue()
 						this.$store.commit('Common/SHOW_BASE_LOADER', false)
@@ -143,10 +138,10 @@ export default {
 				})
 				this.filter.filterSearch = ''
 				this.setDefaultFilterValue()
-				this.filterSkinDataTable()
+				this.filterRewardHistoryTable()
 			}
 		},
-		filterSkinDataTable() {
+		filterRewardHistoryTable() {
 			this.filterQuery = null
 			if (this.filter.filterByList.length > 0) {
 				this.filterQuery = {
@@ -166,12 +161,12 @@ export default {
 				})
 			}
 
-			this.getSkinData().then(() => {
+			this.getNEMTransactions().then(() => {
 				this.resetTablePagination()
 			})
 		},
 		resetTableListConfiguration() {
-			this.getSkinData(null).then(() => {
+			this.getNEMTransactions(null).then(() => {
 				this.filter.filterByList = []
 				this.filter.filterSearch = ''
 				this.resetTablePagination()
@@ -179,50 +174,16 @@ export default {
 			})
 		},
 		resetTablePagination() {
-			this.totalRows = this.filteredSkinData.length
+			this.totalRows = this.filteredRewardHistory.length
 			this.onChangeRecordPerPage()
-		},
-		addNewSkinData() {
-			if (this.blockAddingSkinData) return
-			this.$store.commit('SkinData/SET_ROUTE_LEAVE_GUARD_ACTIVE', true)
-			this.$customModal.show(
-				AddSkinDataModal, {}, {
-					width: '50%',
-					clickToClose: false
-				}, {
-					'before-close': () => {
-						if (this.$store.state.SkinData.skindataDataUpdated) {
-							this.getSkinData(this.filterQuery)
-						}
-						this.$store.commit('SkinData/SET_ROUTE_LEAVE_GUARD_ACTIVE', false)
-					}
-				}
-			)
-		},
-		viewSkinData(item) {
-			this.$store.commit('SkinData/SET_ROUTE_LEAVE_GUARD_ACTIVE', true)
-			this.$store.commit('SkinData/SET_SKINDATA', item)
-			this.$customModal.show(
-				ViewSkinDataModal, {}, {
-					width: '50%',
-					clickToClose: false
-				}, {
-					'before-close': () => {
-						if (this.$store.state.SkinData.skindataDataUpdated) {
-							this.getSkinData(this.filterQuery)
-						}
-						this.$store.commit('SkinData/SET_ROUTE_LEAVE_GUARD_ACTIVE', false)
-					}
-				}
-			)
 		},
 		deleteFilter(idx) {
 			this.filter.filterByList.splice(idx, 1)
-			this.filterSkinDataTable()
+			this.filterRewardHistoryTable()
 		},
 		goToTransactionDetails(item) {
 			this.$store.commit('Common/SHOW_BASE_LOADER', true)
-			this.$store.commit('TransactionDetails/SET_TRANSACTION_HASH', item.transactionHash)
+			this.$store.commit('TransactionDetails/SET_TRANSACTION_HASH', item.transaction_hash)
 			this.$store.dispatch('TransactionDetails/GET_TRANSACTION_DETAILS')
 				.then((result) => {
 					this.$store.commit('TransactionDetails/SET_TRANSACTION_DETAILS', result)
@@ -238,7 +199,7 @@ export default {
 		}
 	},
 	beforeRouteLeave(to, from, next) {
-		if (this.$store.state.SkinData.isRouteLeaveGuardActive) {
+		if (this.$store.state.RewardHistory.isRouteLeaveGuardActive) {
 			let confirmLeaving = confirm('Current changes will be lost. Proceed anyway?')
 			if (confirmLeaving) {
 				EventBusService.$emit('CLOSE_CUSTOM_MODAL')
@@ -251,6 +212,6 @@ export default {
 		}
 	},
 	beforeDestroy() {
-		EventBusService.$off('TRIGGER_SKINDATA_FILTER', filterSkinDataCallback)
+		EventBusService.$off('TRIGGER_SKINDATA_FILTER', filterRewardHistoryCallback)
 	}
 }

@@ -5,6 +5,7 @@ import createPersistedState from 'vuex-persistedstate'
 import Common from './modules/Common/store'
 import Landing from './modules/Landing/store'
 import SkinData from './modules/SkinData/store'
+import RewardHistory from './modules/RewardHistory/store'
 import UserManagement from './modules/UserManagement/store'
 import AccountSettings from './modules/AccountSettings/store'
 import TransactionDetails from './modules/TransactionDetails/store'
@@ -12,6 +13,7 @@ import TransactionDetails from './modules/TransactionDetails/store'
 import commonDefaultState from './modules/Common/store/_state.js'
 import landingDefaultState from './modules/Landing/store/_state.js'
 import skindataDefaultState from './modules/SkinData/store/_state.js'
+import rewardHistoryDefaultState from './modules/RewardHistory/store/_state.js'
 import userManagementDefaultState from './modules/UserManagement/store/_state.js'
 import accountSettingsDefaultState from './modules/AccountSettings/store/_state.js'
 import transactionDetailsDefaultState from './modules/TransactionDetails/store/_state.js'
@@ -24,6 +26,7 @@ const modules = {
 	Common,
 	Landing,
 	SkinData,
+	RewardHistory,
 	UserManagement,
 	AccountSettings,
 	TransactionDetails
@@ -32,7 +35,8 @@ const modules = {
 const stateRef = {
     Common: commonDefaultState,
     Landing: landingDefaultState,
-    SkinData: skindataDefaultState,
+	SkinData: skindataDefaultState,
+	RewardHistory: rewardHistoryDefaultState,
     UserManagement: userManagementDefaultState,
     AccountSettings: accountSettingsDefaultState,
     TransactionDetails: transactionDetailsDefaultState

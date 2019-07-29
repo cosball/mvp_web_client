@@ -1,39 +1,15 @@
 import {
-	SkinDataApi
-} from '@/modules/SkinData/api/'
-
-import {
-    RequestMappingService
-} from '@/modules/SkinData/services'
+	RewardApi
+} from '@/modules/RewardHistory/api/'
 
 export default {
-	GET_SKINDATA_LIST: ({commit, state}, obj) => {
+	GET_TRANS_LIST: ({commit, state, rootState}, obj) => {
 		return new Promise((resolve, reject) => {
-			SkinDataApi.getSkinDataList(obj)
+			RewardApi.getNEMTransactions(obj, rootState.AccountSettings.account.username)
 				.then((response) => {
 					resolve(response)
 				}, () => {
-					reject('Failed to retrieve skindata list')
-				})
-		})
-	},
-	ADD_SKINDATA: ({commit, state, rootState}, skindataObj) => {
-		return new Promise((resolve, reject) => {
-			SkinDataApi.addSkinDataData(skindataObj.address, RequestMappingService.mapSkinData(skindataObj), rootState.AccountSettings.account.username)
-				.then((response) => {
-					resolve(response)
-				}, () => {
-					reject('Failed to add skindata')
-				})
-		})
-	},
-	UPDATE_SKINDATA: ({commit, state, rootState}, skindataObj) => {
-		return new Promise((resolve, reject) => {
-			SkinDataApi.updateSkinDataData(skindataObj.address, RequestMappingService.mapSkinData(skindataObj), rootState.AccountSettings.account.username)
-				.then((response) => {
-					resolve(response)
-				}, () => {
-					reject('Failed to update skindata')
+					reject('Failed to retrieve NEM Transactions')
 				})
 		})
 	}
