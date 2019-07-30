@@ -52,14 +52,19 @@ export default {
 			inputs: {
 				signup: {
 					email: '',
+					username: '',
+					password: '',
 					country: '',
 					raceId: '',
 					dob: '',
 					gender: '',
 					toImprove: [],
-					ongoingProblems: []
+					ongoingProblems: [],
+					roleType: 'User',
+					creator: 'webadmin'
 				}
 			},
+			confirmPassword: '',
 			termAndPolicy: 'false',
 			recaptchaToken: '',
 			recaptcha_sitekey: process.env.VUE_APP_SITEKEY,
@@ -84,10 +89,14 @@ export default {
 		onVerify(recaptchaToken) {
 			this.recaptchaToken = recaptchaToken
 		},
+		validatePassword() {
+
+		},
 		signup() {
 			if (!this.isComplete) return
 			this.$validator.validateAll().then(result => {
 				if (result) {
+					this.inputs.signup.username = this.inputs.signup.email
 					this.inputs.signup.dob = moment(this.inputs.signup.dob).format('YYYY-MM-DD')
 					this.submit()
 				}

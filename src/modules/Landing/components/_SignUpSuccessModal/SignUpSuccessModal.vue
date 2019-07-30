@@ -12,7 +12,7 @@
             <b-col md="10">
               <div class="sign-up-success-container">
                 <div class="success-header-text">Your registration is successful.</div>
-                <div>You will be notified via email once your account is approved. </div>
+                <div> </div>
                 <div class="go-homepage-text">Back to <span class="go-homepage-link" @click="goToLanding">Home Page</span></div>
               </div>
               <custom-button

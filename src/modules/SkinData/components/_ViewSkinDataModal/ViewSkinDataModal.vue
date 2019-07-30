@@ -12,7 +12,7 @@
         <b-container>
           <b-row>
             <b-col cols="12">
-              <label class="mr-sm-2 weather-data">Entered At : {{ inputs.skindata.createdAt }}</label>
+              <label class="mr-sm-2 weather-data">Entered At : {{ inputs.skindata.createdAt | formatDate('YYYY-MM-DD kk:mm:ss') }}</label>
             </b-col>
           </b-row>
           <b-row>

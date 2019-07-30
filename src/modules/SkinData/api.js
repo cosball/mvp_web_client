@@ -1,14 +1,14 @@
 import {
-	WebAdminRestRequest,
 	BlockChainApiRequest
 } from '@/modules/Common/api/providers'
 
 const SkinDataApi = {
-	getSkinDataList(filter) {
+	getSkinDataList(filter, requester) {
 		return new Promise((resolve, reject) => {
-			WebAdminRestRequest.get('/skin_data', {
+			BlockChainApiRequest.get('/skin_data', {
 				params: {
-					filter: filter
+					filter: filter,
+					requester
 				}
 			}).then((res) => {
 				resolve(res)

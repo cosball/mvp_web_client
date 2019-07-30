@@ -36,12 +36,7 @@ export default {
 					transactionHash: this.$store.state.SkinData.skindata.transactionHash,
 					createdAt: this.$store.state.SkinData.skindata.createdAt
 				}
-			},
-			termAndPolicy: 'false',
-			statusList: [
-				{ text: 'Allow', value: 0 },
-				{ text: 'Block', value: 1 }
-			]
+			}
 		}
 	},
 	computed: {

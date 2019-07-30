@@ -17,9 +17,9 @@ export default {
 				})
 		})
 	},
-	GET_SKINDATA_LIST: ({commit, state}, obj) => {
+	GET_SKINDATA_LIST: ({commit, state, rootState}, obj) => {
 		return new Promise((resolve, reject) => {
-			SkinDataApi.getSkinDataList(obj)
+			SkinDataApi.getSkinDataList(obj, rootState.AccountSettings.account.username)
 				.then((response) => {
 					resolve(response)
 				}, () => {

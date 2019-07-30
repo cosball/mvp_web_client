@@ -7,12 +7,20 @@
 
 	& .text-container {
 		padding: 20px;
+		font-size: 20px;
 		text-align: center;
 		color: white;
 
 		& .text-yellow {
 			color: $theme-base-color-tertiary;
 		}
+	}
+
+	& .returned-data {
+		padding: 2px;
+		font-size: 16px;
+		text-align: left;
+		color: $theme-base-color-tertiary;
 	}
 
 	& .ok-button {

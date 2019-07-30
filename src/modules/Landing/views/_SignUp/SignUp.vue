@@ -27,6 +27,46 @@
               ></b-input>
               <span class="error">{{errors.first('email')}}</span>
             </b-col>
+            <b-col md="6">
+              <b-row>
+                <b-col md="12">
+                  <b-row>
+                    <b-col md="6">
+                      <label class="mr-sm-2">
+                        Password
+                        <span class="required">*</span>
+                      </label>
+                      <b-input
+                        v-validate="'required'"
+                        v-model="inputs.signup.password"
+                        placeholder="Password"
+                        class="mb-2 mr-sm-2 mb-sm-0"
+                        name="password"
+                        type="password"
+                        ref="password"
+                      ></b-input>
+                      <span class="error">{{errors.first('password')}}</span>
+                    </b-col>
+                    <b-col md="6">
+                      <label class="mr-sm-2">
+                        Confirm Password
+                        <span class="required">*</span>
+                      </label>
+                      <b-input
+                        v-validate="'required|confirmed:password'"
+                        data-vv-as="password"
+                        v-model="inputs.confirmPassword"
+                        placeholder="Confirm Password"
+                        class="mb-2 mr-sm-2 mb-sm-0"
+                        name="confirmPassword"
+                        type="password"
+                      ></b-input>
+                      <span class="error">{{errors.first('confirmPassword')}}</span>
+                    </b-col>
+                  </b-row>
+                </b-col>
+              </b-row>
+            </b-col>
           </b-row>
 
           <b-row>

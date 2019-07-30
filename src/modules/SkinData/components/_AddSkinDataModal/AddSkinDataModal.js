@@ -57,10 +57,10 @@ export default {
 			this.$validator.validateAll().then(result => {
 				if (result) {
 					this.$store.commit('Common/SHOW_BASE_LOADER', true)
-					this.$store.dispatch('SkinData/ADD_SKINDATA', this.inputs.skindata).then(() => {
+					this.$store.dispatch('SkinData/ADD_SKINDATA', this.inputs.skindata).then((retData) => {
 						this.$store.commit('SkinData/SET_ROUTE_LEAVE_GUARD_ACTIVE', true)
 						this.$store.commit('SkinData/SET_SKINDATA_DATA_UPDATED', true)
-						this.$store.commit('SkinData/SET_SKINDATA', this.inputs.skindata)
+						this.$store.commit('SkinData/SET_SKINDATA', retData)
 						this.$emit('close')
 						this.$customModal.show(
 							SkinDataUpdateCreateSuccessfulModal, {

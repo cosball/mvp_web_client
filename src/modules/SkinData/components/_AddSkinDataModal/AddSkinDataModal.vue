@@ -21,7 +21,7 @@
               <label class="mr-sm-2 weather-data">Weather : {{ inputs.skindata.weather }}</label>
             </b-col>
             <b-col cols="3">
-              <label class="mr-sm-2 weather-data">Temperature : {{ inputs.skindata.temperature }} °C</label>
+              <label class="mr-sm-2 weather-data">Temp. : {{ inputs.skindata.temperature }} °C</label>
             </b-col>
             <b-col cols="3">
               <label class="mr-sm-2 weather-data">Humidity : {{ inputs.skindata.humidity }} %</label>

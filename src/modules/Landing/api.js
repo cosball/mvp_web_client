@@ -1,7 +1,8 @@
 import {
     AuthRequest,
     UserRestRequest,
-	WebAdminRestRequest
+	WebAdminRestRequest,
+	BlockChainApiRequest
 } from '@/modules/Common/api/providers'
 
 const LandingApi = {
@@ -35,8 +36,12 @@ const LandingApi = {
 	},
 	signUp(signUpUserObj) {
 		return new Promise((resolve, reject) => {
-			WebAdminRestRequest.post('/users/signup', signUpUserObj).then((res) => {
-				resolve(res)
+			WebAdminRestRequest.post('/users', signUpUserObj).then((res) => {
+				BlockChainApiRequest.post('/signup', { username: signUpUserObj.username }).then((res) => {
+					resolve(res)
+				}).catch(err => {
+					reject(err)
+				})
 			}).catch(err => {
 				reject(err)
 			})
