@@ -5,9 +5,20 @@ import {
 import store from '@/store'
 const UserManagementApi = {
 	getUserManagementList() {
-		let url = store.state.AccountSettings.account.roleType === 'Super' ? 'users' : `institutions/institutionId/users`
+		var filterWhere = {}
+		if (store.state.AccountSettings.account.roleType === 'Super') {
+			filterWhere = { or: [{ roleType: 'Admin' }, { roleType: 'User' }] }
+		} else if (store.state.AccountSettings.account.roleType === 'Admin') {
+			filterWhere = { roleType: 'User' }
+		} else {
+			filterWhere = { roleType: '***' }
+		}
 		return new Promise((resolve, reject) => {
-			WebAdminRestRequest.get(url).then((res) => {
+			WebAdminRestRequest.get('users', {
+				params: {
+					filter: { where: filterWhere }
+				}
+			}).then((res) => {
 				resolve(res)
 			}).catch(err => {
 				reject(err)

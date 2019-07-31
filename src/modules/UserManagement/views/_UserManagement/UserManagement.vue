@@ -50,11 +50,11 @@
           </section>
           <section class="pagination-container">
             <b-row>
-              <b-col lg="3" md="12">
+              <!-- <b-col lg="3" md="12">
                 <custom-button class="add-button" @click="addNewUser" :inverseColor="true">Add</custom-button>
-              </b-col>
+              </b-col> -->
 
-              <b-col lg="9" md="12">
+              <b-col lg="12" md="12">
                 <b-row align-h="end" class="pagination-configuration">
                   <div class="entries">{{entriesTxt}}</div>
                   <div class="select-box">

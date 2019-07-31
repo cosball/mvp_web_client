@@ -24,29 +24,20 @@ export default {
 			pageOptions: PaginationTableService.getRecordsPerPage(),
 			currentPage: 1,
 			userManagementList: [],
-			fields: [{
-					key: 'firstname',
-					label: 'First Name',
-					sortable: true
-				},
-				{
-					key: 'lastname',
-					label: 'Last Name',
-					sortable: true
-				},
+			fields: [
 				{
 					key: 'email',
 					label: 'Email',
 					sortable: true
 				},
 				{
-					key: 'username',
-					label: 'User Name',
+					key: 'country',
+					label: 'Country',
 					sortable: true
 				},
 				{
-					key: 'contactNo',
-					label: 'Contact Number',
+					key: 'gender',
+					label: 'Gender',
 					sortable: true
 				},
 				{
@@ -60,6 +51,7 @@ export default {
 				}
 			],
 			pageList: [],
+			raceList: [],
 			perPage: PaginationTableService.getRecordsPerPage()[0],
 			totalRows: 0,
 			entriesTxt: '',
@@ -70,9 +62,17 @@ export default {
 	mounted() {
 		this.getUserManagementList()
 	},
+	created() {
+		Promise.all([this.$store.dispatch('Common/GET_RACE_DATA')]).then((results) => {
+			this.raceList = results[0].data
+			return Promise.resolve()
+		}).then(() => {
+		})
+	},
 	methods: {
 		getUserManagementList() {
 			this.$store.commit('Common/SHOW_BASE_LOADER', true)
+			this.$store.dispatch('Common/GET_ROLE_LIST')
 			this.$store.dispatch('UserManagement/GET_USER_MANAGEMENT_LIST')
 				.then((result) => {
 					this.userManagementList = result
@@ -100,11 +100,21 @@ export default {
 		editUser(item) {
 			this.$store.commit('UserManagement/SET_ROUTE_LEAVE_GUARD_ACTIVE', true)
 			this.$store.commit('UserManagement/SET_USER', item)
+
+			var textRace = ''
+			for (let elm of this.raceList) {
+				if (elm.value === item.raceId) {
+					textRace = elm.text
+					break
+				}
+			}
+
 			this.$customModal.show(
 				EditUserModal, {
-					userId: item.id
+					userId: item.id,
+					textRace: textRace
 				}, {
-					width: '80%',
+					width: '65%',
 					clickToClose: false
 				}, {
 					'before-close': () => {

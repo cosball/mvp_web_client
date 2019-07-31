@@ -1,8 +1,10 @@
 .account-settings-wrapper {
+
 	& .body {
 		background-color: $theme-base-color-background;
 
 		& .account-settings-content {
+			max-width: 1200px;
 			padding: 30px 50px;
 
 			& .account-header-container {
@@ -127,6 +129,21 @@
 					}
 				}
 			}
+
+			& .save-button {
+				width: 250px;
+				padding: 15px;
+				float: right;
+				@media (max-width: 768px) {
+					& {
+						width: 100%;
+					}
+				}
+			}
 		}
+	}	
+	
+	& .datepicker-style  > div {
+		color:black
 	}
 }

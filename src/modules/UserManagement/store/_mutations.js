@@ -9,15 +9,15 @@ export default {
 		state.user.toImprove = user.toImprove !== undefined ? user.toImprove : ''
 		state.user.ongoingProblems = user.ongoingProblems !== undefined ? user.ongoingProblems : ''
 		state.user.roleType = user.roleType !== undefined ? user.roleType : ''
-		state.user.createdAt = user.createdAt !== undefined ? user.createdAt : new Date()
-		state.user.updatedAt = user.updatedAt !== undefined ? user.updatedAt : new Date()
-		state.user.tempPassExpired = user.tempPassExpired !== undefined ? user.tempPassExpired : true
-		state.user.realm = user.realm !== undefined ? user.realm : ''
 		state.user.id = user.id !== undefined ? user.id : ''
-		state.user.userURL = user.userURL !== undefined ? user.userURL : ''
-		state.user.passwordChanged = user.passwordChanged !== undefined ? user.passwordChanged : false
-		state.user.emailVerified = user.emailVerified !== undefined ? user.emailVerified : false
-		state.user.firstSignIn = user.firstSignIn !== undefined ? user.firstSignIn : true
+		state.user.profileURL = user.profileURL !== undefined ? user.profileURL : ''
+		// state.user.createdAt = user.createdAt !== undefined ? user.createdAt : new Date()
+		// state.user.updatedAt = user.updatedAt !== undefined ? user.updatedAt : new Date()
+		// state.user.tempPassExpired = user.tempPassExpired !== undefined ? user.tempPassExpired : true
+		// state.user.realm = user.realm !== undefined ? user.realm : ''
+		// state.user.passwordChanged = user.passwordChanged !== undefined ? user.passwordChanged : false
+		// state.user.emailVerified = user.emailVerified !== undefined ? user.emailVerified : false
+		// state.user.firstSignIn = user.firstSignIn !== undefined ? user.firstSignIn : true
 	},
 	SET_ROUTE_LEAVE_GUARD_ACTIVE: (state, active) => {
 		state.isRouteLeaveGuardActive = active

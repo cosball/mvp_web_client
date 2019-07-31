@@ -1,6 +1,7 @@
 import {
 	LayoutContainer,
-	CustomButton
+	CustomButton,
+	InputBox
 } from '@/modules/Common/components'
 
 import {
@@ -12,11 +13,30 @@ import {
 	AccountUpdateSuccessfulModal
 } from '@/modules/AccountSettings/components'
 
+import Datepicker from 'vuejs-datepicker'
+import moment from 'moment'
+
 export default {
 	name: 'account-settings',
 	components: {
 		LayoutContainer,
-		CustomButton
+		CustomButton,
+		InputBox,
+		Datepicker
+	},
+	computed: {
+		isComplete() {
+			let isValid = true
+			// console.log(this.inputs.account)
+			Object.keys(this.inputs.account).forEach((key) => {
+				// console.log('KEY:' + key + ', : ' + this.inputs.account[key])
+				if (['email', 'country', 'raceId', 'dob', 'gender'].indexOf(key) !== -1 && !this.inputs.account[key]) {
+					isValid = false
+					return false
+				}
+			})
+			return isValid
+		}
 	},
 	data() {
 		return {
@@ -25,24 +45,47 @@ export default {
 			file: this.$store.state.AccountSettings.account.profileURL,
 			fileObject: null,
 			S3Client: AwsService.uploadFileS3('Profile-Images'),
-			account: {
+			userId: this.$store.state.AccountSettings.account.id,
+			inputs: {
+				account: {
+					id: this.$store.state.AccountSettings.account.id,
+					email: this.$store.state.AccountSettings.account.email,
+					username: this.$store.state.AccountSettings.account.username,
+					country: this.$store.state.AccountSettings.account.country,
+					raceId: this.$store.state.AccountSettings.account.raceId,
+					dob: this.$store.state.AccountSettings.account.dob,
+					gender: this.$store.state.AccountSettings.account.gender,
+					toImprove: this.$store.state.AccountSettings.account.toImprove,
+					ongoingProblems: this.$store.state.AccountSettings.account.ongoingProblems,
+					profileURL: this.$store.state.AccountSettings.account.profileURL,
+
+					roleType: this.$store.state.AccountSettings.account.roleType,
+					password: ''
+				},
+				confirmPassword: '',
 			},
-			textRace: ''
+			datepickerOptions: {
+				disabledDates: {
+					from: new Date()
+				}
+			},
+			textRace: '',
+			countryList: [],
+			raceData: []
 		}
 	},
 	created() {
-		Promise.all([this.$store.dispatch('Common/GET_RACE_DATA')]).then((results) => {
-			for (let elm of results[0].data) {
-				if (elm.value === this.$store.state.AccountSettings.account.raceId) {
-					this.textRace = elm.text
-					break
-				}
-			}
+		Promise.all([this.$store.dispatch('Common/GET_COUNTRY_LIST'), this.$store.dispatch('Common/GET_RACE_DATA')]).then((results) => {
+			this.countryList = results[0].data
+			this.raceData = results[1].data
 			return Promise.resolve()
 		}).then(() => {
 		})
 	},
 	methods: {
+		customFormatter(date) {
+			return moment(date).format('YYYY-MM-DD')
+		},
 		goBack() {
 			this.$router.back()
 		},
@@ -77,7 +120,7 @@ export default {
 		uploadProfile(fileObject) {
 			return new Promise((resolve, reject) => {
 				this.S3Client.uploadFile(fileObject).then((data) => {
-					return this.$store.dispatch('AccountSettings/UPDATE_USER_DETAILS', data.location)
+					return this.$store.dispatch('AccountSettings/UPDATE_PROFILE_URL', data.location)
 				}).then((profileURL) => {
 					resolve(profileURL)
 				}).catch((error) => {
@@ -89,7 +132,7 @@ export default {
 			return new Promise((resolve, reject) => {
 				this.S3Client.deleteFile(imageFile).then((response) => {
 					if (response.ok === true) {
-						return this.$store.dispatch('AccountSettings/UPDATE_USER_DETAILS', null)
+						return this.$store.dispatch('AccountSettings/UPDATE_PROFILE_URL', null)
 					} else {
 						reject(`Failed to delete the ${imageFile}`)
 					}
@@ -142,6 +185,21 @@ export default {
 			} else {
 				this.$store.commit('Common/SHOW_BASE_LOADER', false)
 			}
+		},
+		save() {
+			if (!this.isComplete) return
+			this.$validator.validateAll().then(result => {
+				if (result) {
+					this.$store.commit('Common/SHOW_BASE_LOADER', true)
+					this.$store.dispatch('AccountSettings/UPDATE_USER_DETAILS', {
+						'userObj': this.inputs.account,
+						'userId': this.userId
+					}).then(() => {
+						this.$store.commit('Common/SHOW_BASE_LOADER', false)
+						this.goToAccountUpdateSuccessfulModal()
+					})
+				}
+			})
 		}
 	}
 }

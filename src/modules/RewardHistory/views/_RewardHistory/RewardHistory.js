@@ -30,14 +30,8 @@ export default {
 				filterByList: [],
 				filterSearch: '',
 				filterFieldOptionsList: [{
-					text: 'Address',
-					value: 'address'
-				}, {
-					text: 'Blockchain Type',
-					value: 'addressType'
-				}, {
-					text: 'Reason',
-					value: 'reason'
+					text: 'Type',
+					value: 'message.tx_type'
 				}],
 				selectedFilterField: ''
 			},

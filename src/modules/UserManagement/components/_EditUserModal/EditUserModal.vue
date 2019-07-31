@@ -5,126 +5,89 @@
         <button type="button" aria-label="Close" class="close" @click="closeModal">×</button>
         <div>
           <h5 class="modal-title">{{title}}</h5>
-          <div class="required error">*Denotes Required Field</div>
         </div>
       </div>
 
       <div slot="body" class="form-body">
         <b-container>
           <b-row>
-            <b-col md="6">
+            <b-col class="set-profile-to-center" cols="12" md="2">
               <b-row>
-                <b-col md="6">
-                  <label class="mr-sm-2">
-                    First name
-                    <span class="required">*</span>
-                  </label>
-                  <b-input
-                    v-validate="'required'"
-                    data-vv-as="First Name"
-                    v-model="inputs.user.firstname"
-                    placeholder="Your first name"
-                    class="mb-2 mr-sm-2 mb-sm-0"
-                    name="firstName"
-                  ></b-input>
-                  <span class="error">{{errors.first('firstName')}}</span>
-                </b-col>
-                <b-col md="6">
-                  <label class="mr-sm-2">
-                    Last name
-                    <span class="required">*</span>
-                  </label>
-                  <b-input
-                    v-validate="'required'"
-                    data-vv-as="Last name"
-                    v-model="inputs.user.lastname"
-                    placeholder="Your last name"
-                    class="mb-2 mr-sm-2 mb-sm-0"
-                    name="lastName"
-                  ></b-input>
-                  <span class="error">{{errors.first('lastName')}}</span>
-                </b-col>
-                <b-col md="12">
-                  <b-row>
-                    <b-col md="6">
-                      <label class="mr-sm-2">
-                        User Name
-                        <span class="required">*</span>
-                      </label>
-                      <b-input
-                        v-validate="'required'"
-                        data-vv-as="user Name"
-                        v-model="inputs.user.username"
-                        placeholder="Your User Name"
-                        class="mb-2 mr-sm-2 mb-sm-0"
-                        name="userName"
-                      ></b-input>
-                      <span class="error">{{errors.first('userName')}}</span>
-                    </b-col>
-                    <b-col md="6">
-                      <label class="mr-sm-2">
-                        Email Address
-                        <span class="required">*</span>
-                      </label>
-                      <b-input
-                        v-validate="'required|email'"
-                        data-vv-as="Email Address"
-                        v-model="inputs.user.email"
-                        placeholder="Your email address"
-                        class="mb-2 mr-sm-2 mb-sm-0"
-                        name="email"
-                      ></b-input>
-                      <span class="error">{{errors.first('email')}}</span>
-                    </b-col>
-                  </b-row>
-                </b-col>
-                <b-col md="6">
-                  <label class="mr-sm-2">Position/Title</label>
-                  <b-input
-                    v-model="inputs.user.posTitle"
-                    placeholder="Position/Title"
-                    class="mb-2 mr-sm-2 mb-sm-0"
-                  ></b-input>
-                </b-col>
-                <b-col md="6">
-                  <label class="mr-sm-2" for="roles">
-                    Roles
-                    <span class="required">*</span>
-                  </label>
-                  <b-form-select
-                    v-validate="'required'"
-                    data-vv-as="Roles"
-                    v-model="inputs.user.roleType"
-                    class="mb-2 mr-sm-2 mb-sm-0"
-                    :value="null"
-                    :options="roleList"
-                    name="roles"
-                  >
-                    <template slot="first">
-                      <option :value="null" disabled>Select Roles</option>
-                    </template>
-                  </b-form-select>
-                  <span class="error">{{errors.first('roles')}}</span>
+                <b-col cols="12">
+                  <div class="account-icon-container">
+                    <div
+                      v-if="inputs.user.profileURL"
+                      :style="{'background-image': `url(${inputs.user.profileURL})`}"
+                      class="profile-image"
+                    ></div>
+                  </div>
                 </b-col>
               </b-row>
             </b-col>
-            <b-col md="6">
+
+            <b-col md="7">
               <b-row>
-                <b-col md="12">
-                  <label class="mr-sm-2" for="contactNumber">
-                    Contact Number
-                    <span class="required">*</span>
-                  </label>
-                  <b-input
-                    v-validate="'required'"
-                    data-vv-as="Contact Number"
-                    v-model="inputs.user.contactNo"
-                    placeholder="+0123456789"
-                    class="mb-2 mr-sm-2 mb-sm-0"
-                    name="contactNumber"
-                  ></b-input>
-                  <span class="error">{{errors.first('contactNumber')}}</span>
-                </b-col>
+                <label cols="12" md="4" lg="3" xl="2">Email Address:</label>
+                <label class="value" cols="12" md="8" lg="9" xl="10">{{inputs.user.email}}</label>
+              </b-row>
+              <b-row>
+                <label cols="12" md="4" lg="3" xl="2">Country:</label>
+                <label class="value" cols="12" md="8" lg="9" xl="10">{{inputs.user.country}}</label>
+              </b-row>
+              <b-row>
+                <label cols="12" md="4" lg="3" xl="2">Race/Ethnicity:</label>
+                <label class="value" cols="12" md="8" lg="9" xl="10">{{textRace}}</label>
+              </b-row>
+              <b-row>
+                <label cols="12" md="4" lg="3" xl="2">Date of Birth:</label>
+                <label class="value" cols="12" md="8" lg="9" xl="10">{{inputs.user.dob}}</label>
+              </b-row>
+              <b-row>
+                <label cols="12" md="4" lg="3" xl="2">Gender:</label>
+                <label class="value" cols="12" md="8" lg="9" xl="10">{{inputs.user.gender}}</label>
+              </b-row>
+              <b-row>
+                <label cols="12" md="4" lg="3" xl="2">What do you want to improve?</label>
+                <label class="value" cols="12" md="8" lg="9" xl="10">{{inputs.user.toImprove.join(', ')}}</label>
+              </b-row>
+              <b-row>
+                <label cols="12" md="4" lg="3" xl="2">Current ongoing skin problems:</label>
+                <label class="value" cols="12" md="8" lg="9" xl="10">{{inputs.user.ongoingProblems.join(', ')}}</label>
+              </b-row>
+            </b-col>
+
+            <b-col md="3">
+              <b-row>
+                <label class="mr-sm-2" for="roles">
+                  Roles
+                </label>
+                <b-form-select
+                  data-vv-as="Roles"
+                  v-model="inputs.user.roleType"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  :value="null"
+                  :options="roleList"
+                  name="roles"
+                  @change="valueChanged"
+                >
+                  <template slot="first">
+                    <option :value="null" disabled>Select Roles</option>
+                  </template>
+                </b-form-select>
+                <span class="error">{{errors.first('roles')}}</span>
+              </b-row>
+              <br>
+              <b-row>
+                <label class="mr-sm-2">
+                  Reset Password
+                </label>
+                <b-input
+                  v-model="inputs.user.password"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  type="password"
+                  name="password"
+                  @change="valueChanged"
+                ></b-input>
               </b-row>
             </b-col>
           </b-row>
@@ -138,11 +101,7 @@
             @click="editUser"
             :inverseColor="true"
           >Confirm Changes</custom-button>
-          <custom-button
-            class="cancel-button"
-            @click="closeModal"
-            :inverseColor="false"
-          >Cancel</custom-button>
+          <custom-button class="cancel-button" @click="closeModal" :inverseColor="false">Cancel</custom-button>
         </div>
       </div>
     </base-modal>

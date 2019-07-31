@@ -15,21 +15,16 @@ export default {
 		CustomButton
 	},
 	props: {
-		userId: String
+		userId: String,
+		textRace: String
 	},
 	computed: {
 		isComplete() {
-			let isValid = true
-			Object.keys(this.inputs.user).forEach((key, value) => {
-				if (key !== 'posTitle' && !this.inputs.user[key]) {
-					isValid = false
-					return false
-				}
-			})
-			return isValid
+			return this.isValueChanged
 		}
 	},
 	data() {
+		console.log(this.$store.state.UserManagement.user)
 		return {
 			title: 'Edit User',
 			inputs: {
@@ -42,10 +37,15 @@ export default {
 					gender: this.$store.state.UserManagement.user.gender,
 					toImprove: this.$store.state.UserManagement.user.toImprove,
 					ongoingProblems: this.$store.state.UserManagement.user.ongoingProblems,
-					roleType: this.$store.state.UserManagement.user.roleType
+					profileURL: this.$store.state.UserManagement.user.profileURL,
+
+					roleType: this.$store.state.UserManagement.user.roleType,
+					password: ''
 				}
 			},
-			roleList: this.$store.state.Common.roleList
+			confirmPassword: '',
+			roleList: this.$store.state.Common.roleList,
+			isValueChanged: false
 		}
 	},
 	methods: {
@@ -84,6 +84,9 @@ export default {
 			this.$store.commit('UserManagement/SET_USER_MANAGEMENT_DATA_UPDATED', false)
 			this.$store.commit('UserManagement/SET_USER', {})
 			this.$emit('close')
+		},
+		valueChanged() {
+			this.isValueChanged = true
 		}
 	},
 	mounted() {

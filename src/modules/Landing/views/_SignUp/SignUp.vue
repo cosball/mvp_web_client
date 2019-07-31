@@ -37,7 +37,7 @@
                         <span class="required">*</span>
                       </label>
                       <b-input
-                        v-validate="'required'"
+                        v-validate="'required|min:12'"
                         v-model="inputs.signup.password"
                         placeholder="Password"
                         class="mb-2 mr-sm-2 mb-sm-0"
@@ -53,7 +53,7 @@
                         <span class="required">*</span>
                       </label>
                       <b-input
-                        v-validate="'required|confirmed:password'"
+                        v-validate="{ required: inputs.signup.password?true:false, confirmed: inputs.signup.password }"
                         data-vv-as="password"
                         v-model="inputs.confirmPassword"
                         placeholder="Confirm Password"

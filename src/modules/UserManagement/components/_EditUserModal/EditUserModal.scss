@@ -15,12 +15,16 @@
 	}
 
 	.form-body {
-		padding: 15px;
+		padding: 5px;
 
 		& label {
 			color: $theme-base-color-lightest;
 			font-size: 13px;
-			margin: 10px 0;
+			margin: 5px 3px;
+		}
+
+		& .value {
+			color: $theme-base-color-tertiary;
 		}
 
 		& input,
@@ -40,7 +44,22 @@
             }
 		}
 
+		& .account-icon-container {
+			width: 100px;
 
+			& .account-icon,
+			& .profile-image {
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-image: url('~@/assets/img/acc-settings.png');
+				width: 120px;
+				height: 120px;
+			}
+
+			& .profile-image {
+				border-radius: 20px;
+			}
+		}
 	}
 
 	& .modal-footer {
