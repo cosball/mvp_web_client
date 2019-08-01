@@ -1,7 +1,7 @@
 import Chart from 'chart.js'
 
 export default {
-	name: 'bar-chart-trans-checked-per-type',
+	name: 'bar-chart-skin-data-per-day',
 	data() {
 		return {}
 	},
@@ -31,11 +31,11 @@ export default {
 				type: 'bar'
 			})
 			this.chart.data = {
-				labels: Object.keys(this.list.transCheckedPerType),
+				labels: this.list.SkinDataPerDay.date,
 				datasets: [{
 					backgroundColor: gradient,
 					hoverBackgroundColor: gradient,
-					data: Object.values(this.list.transCheckedPerType)
+					data: this.list.SkinDataPerDay.count
 				}]
 			}
 
@@ -54,14 +54,23 @@ export default {
 					}],
 					yAxes: [{
 						ticks: {
-							min: 0,
-							fontColor: 'white'
+							fontColor: 'white',
+							min: 0
 						}
 					}]
 				}
 			}
 			this.chart.update()
+		},
+		resizeChart() {
+
 		}
+	},
+	created() {
+		document.addEventListener('resize', this.resizeChart)
+	},
+	destroyed() {
+		document.removeEventListener('resize', this.resizeChart)
 	},
 	watch: {
 		list: function() {

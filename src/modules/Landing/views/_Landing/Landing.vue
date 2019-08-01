@@ -13,12 +13,12 @@
           </b-row>
           <b-row class="justify-content-md-left mb-1 mt-3">
             <b-col lg="5" class="mb-5 mt-3">
-              <b-card title="Daily entered skin data">
+              <b-card title="Entered Skin Data Per Day">
                 <div class="chartcard">
-                  <bar-chart-skin-data-per-period
+                  <bar-chart-skin-data-per-day
                     ref-id="skindata-per-period"
                     :list="pieBarChartData"
-                  ></bar-chart-skin-data-per-period>
+                  ></bar-chart-skin-data-per-day>
                 </div>
               </b-card>
             </b-col>

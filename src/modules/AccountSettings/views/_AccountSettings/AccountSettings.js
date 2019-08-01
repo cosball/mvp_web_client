@@ -191,6 +191,9 @@ export default {
 			this.$validator.validateAll().then(result => {
 				if (result) {
 					this.$store.commit('Common/SHOW_BASE_LOADER', true)
+
+					this.inputs.account.dob = moment(this.inputs.account.dob).format('YYYY-MM-DD')
+
 					this.$store.dispatch('AccountSettings/UPDATE_USER_DETAILS', {
 						'userObj': this.inputs.account,
 						'userId': this.userId

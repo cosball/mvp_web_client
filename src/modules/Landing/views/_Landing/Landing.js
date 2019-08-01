@@ -2,9 +2,7 @@ import {
 	LayoutContainer,
 	CustomButton,
 	LineChartNemStats,
-    PieChartSkinData,
-    BarChartTransCheckedPerType,
-    BarChartSkinDataPerPeriod
+    BarChartSkinDataPerDay
 } from '@/modules/Common/components'
 
 import {
@@ -20,9 +18,7 @@ export default {
 		LayoutContainer,
 		CustomButton,
 		LineChartNemStats,
-        PieChartSkinData,
-        BarChartTransCheckedPerType,
-        BarChartSkinDataPerPeriod,
+        BarChartSkinDataPerDay,
 		LandingHeader,
 		LandingFooter
 	},

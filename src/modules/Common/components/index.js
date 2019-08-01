@@ -7,9 +7,7 @@ import BaseModal from './_BaseModal/BaseModal.vue'
 import GotoTop from './_GotoTop/GotoTop.vue'
 import InputBox from './_InputBox/InputBox.vue'
 import LineChartNemStats from './_LineChartNemStats/LineChartNemStats.vue'
-import PieChartSkinData from './_PieChartSkinData/PieChartSkinData.vue'
-import BarChartTransCheckedPerType from './_BarChartTransCheckedPerType/BarChartTransCheckedPerType.vue'
-import BarChartSkinDataPerPeriod from './_BarChartSkinDataPerPeriod/BarChartSkinDataPerPeriod.vue'
+import BarChartSkinDataPerDay from './_BarChartSkinDataPerDay/BarChartSkinDataPerDay.vue'
 
 export {
     LayoutContainer,
@@ -21,7 +19,5 @@ export {
     GotoTop,
     InputBox,
     LineChartNemStats,
-    PieChartSkinData,
-    BarChartTransCheckedPerType,
-    BarChartSkinDataPerPeriod
+    BarChartSkinDataPerDay
 }
