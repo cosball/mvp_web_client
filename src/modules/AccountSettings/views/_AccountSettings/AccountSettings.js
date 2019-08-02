@@ -64,6 +64,7 @@ export default {
 				},
 				confirmPassword: '',
 			},
+			accountBalance: 0,
 			datepickerOptions: {
 				disabledDates: {
 					from: new Date()
@@ -75,9 +76,10 @@ export default {
 		}
 	},
 	created() {
-		Promise.all([this.$store.dispatch('Common/GET_COUNTRY_LIST'), this.$store.dispatch('Common/GET_RACE_DATA')]).then((results) => {
+		Promise.all([this.$store.dispatch('Common/GET_COUNTRY_LIST'), this.$store.dispatch('Common/GET_RACE_DATA'), this.$store.dispatch('AccountSettings/GET_USER_BALANCE', this.$store.state.AccountSettings.account.username)]).then((results) => {
 			this.countryList = results[0].data
 			this.raceData = results[1].data
+			this.accountBalance = results[2].balance
 			return Promise.resolve()
 		}).then(() => {
 		})

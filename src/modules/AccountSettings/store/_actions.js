@@ -18,6 +18,16 @@ export default {
 				})
 		})
 	},
+    GET_USER_BALANCE: ({commit, state}, username) => {
+		return new Promise((resolve, reject) => {
+			AccountSettingsApi.getUserBalance(username)
+				.then((response) => {
+					resolve(response)
+				}, () => {
+					reject('Failed GET_USER_BALANCE')
+				})
+		})
+	},
 	UPDATE_PROFILE_URL: ({commit, state, rootState}, profileURL) => {
 		return new Promise((resolve, reject) => {
 			AccountSettingsApi.updateProfileURL(rootState.Common.userId, profileURL)

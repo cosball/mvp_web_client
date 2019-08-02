@@ -37,7 +37,7 @@ const LandingApi = {
 	signUp(signUpUserObj) {
 		return new Promise((resolve, reject) => {
 			WebAdminRestRequest.post('/users', signUpUserObj).then((res) => {
-				BlockChainApiRequest.post('/signup', { username: signUpUserObj.username }).then((res) => {
+				BlockChainApiRequest.post('/account/signup', { username: signUpUserObj.username }).then((res) => {
 					resolve(res)
 				}).catch(err => {
 					reject(err)
