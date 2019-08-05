@@ -6,8 +6,8 @@ const _service = {
             bucketName: process.env.VUE_APP_BUCKET_NAME,
             dirName: dirName,
             region: process.env.VUE_APP_REGION,
-            accessKeyId: process.env.VUE_APP_AWS_ACCESSKEYID,
-            secretAccessKey: process.env.VUE_APP_SECRET_ACCESS_KEY,
+            accessKeyId: process.env.VUE_APP_AWS_ACCESSKEYID.substring(3, process.env.VUE_APP_AWS_ACCESSKEYID.length - 3),
+            secretAccessKey: process.env.VUE_APP_SECRET_ACCESS_KEY.substring(3, process.env.VUE_APP_SECRET_ACCESS_KEY.length - 3),
             s3Url: process.env.VUE_APP_S3_URL,
         })
 	}
