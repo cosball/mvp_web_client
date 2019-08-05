@@ -120,10 +120,28 @@ export default {
 				this.getSkinData()
 			}
 		},
-		getSkinData() {
+		getSkinData(order) {
 			return new Promise((resolve, reject) => {
 				this.$store.commit('Common/SHOW_BASE_LOADER', true)
-				this.$store.dispatch('SkinData/GET_SKINDATA_LIST', this.filterQuery)
+
+				console.log(this.filteredSkinData)
+				var txHash
+				if (this.filteredSkinData.length > 0 && typeof order !== 'undefined') {
+					if (order === 1) {
+						txHash = this.filteredSkinData[0].transactionHash
+					} else {
+						txHash = this.filteredSkinData[this.filteredSkinData.length - 1].transactionHash
+					}
+				} else {
+					txHash = null
+				}
+
+				var params = {
+					tx_hash: txHash,
+					num_of_rows: this.perPage,
+					order: order
+				}
+				this.$store.dispatch('SkinData/GET_SKINDATA_LIST', params)
 					.then((result) => {
 						this.filteredSkinData = cloneDeep(result)
 						this.resetTablePagination()

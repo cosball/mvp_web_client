@@ -17,7 +17,7 @@
                   class="records-per-page-dropdown"
                   v-model="perPage"
                   :options="pageOptions"
-                  @change="onChangeRecordPerPage"
+                  @change="getSkinData()"
                 ></b-form-select>
                 <span class="text">records per page</span>
               </b-col>
@@ -84,33 +84,25 @@
             </b-row>
           </section>
           <section class="pagination-container">
-            <b-row>
-              <b-col lg="3" md="12">
-                <custom-button
-                  class="add-button"
-                  @click="addNewSkinData"
-                  :inverseColor="true"
-                >Add</custom-button>
-              </b-col>
-              <b-col lg="9" md="12">
-                <b-row align-h="end" class="pagination-configuration">
-                  <div class="entries">{{entriesTxt}}</div>
-                  <div class="select-box">
-                    <b-form-select class="pages" v-model="currentPage" :options="pageList"></b-form-select>
-                  </div>
-                  <div class="pagination-for-table">
-                    <b-pagination
-                      v-model="currentPage"
-                      :total-rows="totalRows"
-                      :per-page="perPage"
-                      class="pagination-table"
-                      first-text="First"
-                      last-text="Last"
-                      @input="onChangeTablePagination()"
-                    ></b-pagination>
-                  </div>
-                </b-row>
-              </b-col>
+            <b-row align-h="end" class="pagination-configuration">
+              <ul class="pagination pagination-table b-pagination pagination-md">
+                <li class="page-item">
+                  <a
+                    rel="prev"
+                    href="javascript:void(0)"
+                    class="page-link"
+                    @click="getSkinData()"
+                  >&lt;&lt; First</a>
+                </li>
+                <li class="page-item">
+                  <a
+                    rel="next"
+                    href="javascript:void(0)"
+                    class="page-link"
+                    @click="getSkinData(-1)"
+                  >Next &gt;&gt;</a>
+                </li>
+              </ul>
             </b-row>
           </section>
         </div>

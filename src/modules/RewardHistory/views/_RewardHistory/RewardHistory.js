@@ -97,10 +97,27 @@ export default {
 				this.getNEMTransactions()
 			}
 		},
-		getNEMTransactions() {
+		getNEMTransactions(order) {
 			return new Promise((resolve, reject) => {
 				this.$store.commit('Common/SHOW_BASE_LOADER', true)
-				this.$store.dispatch('RewardHistory/GET_TRANS_LIST', this.filterQuery)
+
+				var txHash
+				if (this.filteredRewardHistory.length > 0 && typeof order !== 'undefined') {
+					if (order === 1) {
+						txHash = this.filteredRewardHistory[0].transaction_hash
+					} else {
+						txHash = this.filteredRewardHistory[this.filteredRewardHistory.length - 1].transaction_hash
+					}
+				} else {
+					txHash = null
+				}
+
+				var params = {
+					tx_hash: txHash,
+					num_of_rows: this.perPage,
+					order: order
+				}
+				this.$store.dispatch('RewardHistory/GET_TRANS_LIST', params)
 					.then((result) => {
 						this.filteredRewardHistory = result
 						this.resetTablePagination()

@@ -17,10 +17,11 @@
                   class="records-per-page-dropdown"
                   v-model="perPage"
                   :options="pageOptions"
-                  @change="onChangeRecordPerPage"
+                  @change="getNEMTransactions()"
                 ></b-form-select>
                 <span class="text">records per page</span>
               </b-col>
+
               <!--
               <b-col cols="12" lg="6" class="filter-wrapper">
                 <b-input-group>
@@ -70,33 +71,35 @@
                   table-class="skindata-table"
                 >
                   <template slot="deadline" slot-scope="row">
-                    <div class="link" @click="goToTransactionDetails(row.item)">{{row.value | formatDate('YYYY-MM-DD kk:mm:ss')}}</div>
+                    <div
+                      class="link"
+                      @click="goToTransactionDetails(row.item)"
+                    >{{row.value | formatDate('YYYY-MM-DD kk:mm:ss')}}</div>
                   </template>
                 </b-table>
               </b-col>
             </b-row>
           </section>
           <section class="pagination-container">
-            <b-row>
-              <b-col lg="12" md="12">
-                <b-row align-h="end" class="pagination-configuration">
-                  <div class="entries">{{entriesTxt}}</div>
-                  <div class="select-box">
-                    <b-form-select class="pages" v-model="currentPage" :options="pageList"></b-form-select>
-                  </div>
-                  <div class="pagination-for-table">
-                    <b-pagination
-                      v-model="currentPage"
-                      :total-rows="totalRows"
-                      :per-page="perPage"
-                      class="pagination-table"
-                      first-text="First"
-                      last-text="Last"
-                      @input="onChangeTablePagination()"
-                    ></b-pagination>
-                  </div>
-                </b-row>
-              </b-col>
+            <b-row align-h="end" class="pagination-configuration">
+              <ul class="pagination pagination-table b-pagination pagination-md">
+                <li class="page-item">
+                  <a
+                    rel="prev"
+                    href="javascript:void(0)"
+                    class="page-link"
+                    @click="getNEMTransactions()"
+                  >&lt;&lt; First</a>
+                </li>
+                <li class="page-item">
+                  <a
+                    rel="next"
+                    href="javascript:void(0)"
+                    class="page-link"
+                    @click="getNEMTransactions(-1)"
+                  >Next &gt;&gt;</a>
+                </li>
+              </ul>
             </b-row>
           </section>
         </div>

@@ -7,7 +7,9 @@ const RewardApi = {
 		return new Promise((resolve, reject) => {
 			BlockChainApiRequest.get('/transactions', {
 				params: {
-					filter: filter,
+					tx_hash: filter.tx_hash,
+					num_of_rows: filter.num_of_rows,
+					order: filter.order,
 					requester
 				}
 			}).then((res) => {

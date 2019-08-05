@@ -126,6 +126,10 @@
 					float: right;
 
 					& .page-item {
+						width: 150px;
+						margin: 2px;
+						text-align: center;
+
 						& .page-link {
 							color: $theme-base-color-darkest;
 						}
