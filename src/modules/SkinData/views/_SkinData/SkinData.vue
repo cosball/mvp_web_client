@@ -70,7 +70,10 @@
                   table-class="skindata-table"
                 >
                   <template slot="createdAt" slot-scope="row">
-                    <div class="link" @click="goToTransactionDetails(row.item)">{{row.value | formatDate('YYYY-MM-DD kk:mm:ss')}}</div>
+                    <div
+                      class="link"
+                      @click="goToTransactionDetails(row.item)"
+                    >{{row.value | formatDate('YYYY-MM-DD kk:mm:ss')}}</div>
                   </template>
                   <template slot="actions" slot-scope="row">
                     <font-awesome-icon
@@ -84,25 +87,32 @@
             </b-row>
           </section>
           <section class="pagination-container">
-            <b-row align-h="end" class="pagination-configuration">
-              <ul class="pagination pagination-table b-pagination pagination-md">
-                <li class="page-item">
-                  <a
-                    rel="prev"
-                    href="javascript:void(0)"
-                    class="page-link"
-                    @click="getSkinData()"
-                  >&lt;&lt; First</a>
-                </li>
-                <li class="page-item">
-                  <a
-                    rel="next"
-                    href="javascript:void(0)"
-                    class="page-link"
-                    @click="getSkinData(-1)"
-                  >Next &gt;&gt;</a>
-                </li>
-              </ul>
+            <b-row>
+              <b-col lg="3" md="12">
+                <custom-button class="add-button" @click="addNewSkinData" :inverseColor="true">Add</custom-button>
+              </b-col>
+              <b-col lg="9" md="12">
+                <b-row align-h="end" class="pagination-configuration">
+                  <ul class="pagination pagination-table b-pagination pagination-md">
+                    <li class="page-item">
+                      <a
+                        rel="prev"
+                        href="javascript:void(0)"
+                        class="page-link"
+                        @click="getSkinData()"
+                      >&lt;&lt; First</a>
+                    </li>
+                    <li class="page-item">
+                      <a
+                        rel="next"
+                        href="javascript:void(0)"
+                        class="page-link"
+                        @click="getSkinData(-1)"
+                      >Next &gt;&gt;</a>
+                    </li>
+                  </ul>
+                </b-row>
+              </b-col>
             </b-row>
           </section>
         </div>
