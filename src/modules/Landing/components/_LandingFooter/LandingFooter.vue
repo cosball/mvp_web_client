@@ -25,11 +25,10 @@
           </b-col>
           <b-col lg="3" cols="12" md="auto">
             <div class="cosball-emblem"></div>
-            <p>
-              &copy; Copyright {{year}}
+            <p style="margin-top:5px;">
+              &copy; Copyright 2019
               <b>JISTD LTD.</b>
-              <br />
-              <span>All trademarks and copyrights belong to JISTD LTD.</span>
+              <br />all rights reserved.
             </p>
           </b-col>
         </b-row>
