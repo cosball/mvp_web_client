@@ -216,10 +216,19 @@
                 </b-row>
 
                 <b-row>
-                  <b-col md="2">
-                    <label class="mr-sm-2">Balance: {{accountBalance}}</label>
+                  <b-col md="12">
+                    <label md="6" class="mr-sm-2">My Wallet Address:</label>
+                    <label md="6" class="mr-sm-2 value">{{accountAddress}}</label>
                   </b-col>
-                  <b-col md="10">
+                </b-row>
+                <b-row>
+                  <b-col md="12">
+                    <label md="6" class="mr-sm-2">Balance of COSBALL Token:</label>
+                    <label md="6" class="mr-sm-2 value">{{accountBalance}}</label>
+                  </b-col>
+                </b-row>
+                <b-row>
+                  <b-col md="12">
                     <custom-button
                       v-bind:class="{ 'disabled': !isComplete }"
                       class="save-button"

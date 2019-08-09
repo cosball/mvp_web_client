@@ -19,7 +19,7 @@
               <b-col md="8" cols="12" class="value">{{blockChainData.block}}</b-col>
             </b-row>
             <b-row>
-              <b-col md="4" cols="12" class="label">Hash:</b-col>
+              <b-col md="4" cols="12" class="label">Transaction Hash:</b-col>
               <b-col
                 md="8"
                 cols="12"
@@ -35,10 +35,10 @@
               <b-col md="8" cols="12" class="value">{{blockChainData.recipient_addr}}</b-col>
             </b-row>
             <b-row>
-              <b-col md="4" cols="12" class="label">Mosaics attached:</b-col>
-              <b-col md="8" cols="12" class="value">{{blockChainData.mosaics.length}}</b-col>
+              <b-col md="4" cols="12" class="label">COSBALL Token:</b-col>
+              <b-col md="8" cols="12" class="value">{{blockChainData.mosaics.reduce((acc, item) => acc + item.quantity, 0)}}</b-col>
             </b-row>
-            <b-row>
+            <!-- <b-row>
               <b-col
                 cols="12"
                 v-for="(mosaic, index)  in blockChainData.mosaics"
@@ -52,7 +52,7 @@
                   <b-col cols="12" md="8" class="value">{{mosaic.quantity}}</b-col>
                 </b-row>
               </b-col>
-            </b-row>
+            </b-row> -->
             <b-row>
               <b-col cols="12" md="4" class="label">Deadline:</b-col>
               <b-col cols="12" md="8" class="value">{{blockChainData.deadline}}</b-col>

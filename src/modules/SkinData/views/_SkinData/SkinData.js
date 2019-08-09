@@ -222,7 +222,7 @@ export default {
 				}, {
 					'before-close': () => {
 						if (this.$store.state.SkinData.skindataDataUpdated) {
-							this.getSkinData(this.filterQuery)
+							this.getSkinData()
 						}
 						this.$store.commit('SkinData/SET_ROUTE_LEAVE_GUARD_ACTIVE', false)
 					}

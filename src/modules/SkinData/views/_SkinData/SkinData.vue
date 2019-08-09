@@ -97,7 +97,9 @@
                     <li class="page-item">
                       <a
                         rel="prev"
-                        href="javascript:void(0)"
+                        href="#"
+                        tabindex="-1"
+                        role="menuitem"
                         class="page-link"
                         @click="getSkinData()"
                       >&lt;&lt; First</a>
@@ -105,7 +107,9 @@
                     <li class="page-item">
                       <a
                         rel="next"
-                        href="javascript:void(0)"
+                        href="#"
+                        tabindex="-1"
+                        role="menuitem"
                         class="page-link"
                         @click="getSkinData(-1)"
                       >Next &gt;&gt;</a>

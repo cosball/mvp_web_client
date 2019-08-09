@@ -122,7 +122,11 @@
 					& .row {
 						padding-top: 7px;
 						padding-bottom: 7px;
-
+						
+						& label {
+							user-select: text;
+						}
+					
 						& .value {
 							color: $theme-base-color-tertiary;
 						}

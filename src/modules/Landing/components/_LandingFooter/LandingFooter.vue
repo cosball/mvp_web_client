@@ -27,9 +27,9 @@
             <div class="cosball-emblem"></div>
             <p>
               &copy; Copyright {{year}}
-              <b>Cosball Ltd.</b>
+              <b>JISTD LTD.</b>
               <br />
-              <span>All trademarks and copyrights belong to Cosball Ltd.</span>
+              <span>All trademarks and copyrights belong to JISTD LTD.</span>
             </p>
           </b-col>
         </b-row>
