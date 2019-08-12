@@ -46,19 +46,19 @@ Vue.use(filters)
 library.add(fas)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-function loadScriptAsync() {
-	return new Promise((resolve, reject) => {
-		let tag = document.createElement('script')
-		tag.src = 'https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit'
-		tag.async = true
-		tag.defer = true
-		tag.type = 'text/javascript'
-		tag.onload = () => {
-			resolve()
-		}
-		document.body.appendChild(tag)
-	})
-}
+// function loadScriptAsync() {
+// 	return new Promise((resolve, reject) => {
+// 		let tag = document.createElement('script')
+// 		tag.src = 'https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit'
+// 		tag.async = true
+// 		tag.defer = true
+// 		tag.type = 'text/javascript'
+// 		tag.onload = () => {
+// 			resolve()
+// 		}
+// 		document.body.appendChild(tag)
+// 	})
+// }
 
 function initApp() {
 	Vue.config.productionTip = false
@@ -76,5 +76,6 @@ function initApp() {
 }
 
 (function() {
-  loadScriptAsync().then(() => initApp())
+	initApp()
+//   loadScriptAsync().then(() => initApp())
 })()
