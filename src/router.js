@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import VueAnalytics from 'vue-analytics'
+// import VueAnalytics from 'vue-analytics'
 
 import store from './store'
 
@@ -32,13 +32,13 @@ const router = new VueRouter({
 	}
 })
 
-Vue.use(VueAnalytics, {
-	id: 'UA-143767054-2',
-	router,
-	autoTracking: {
-		pageviewOnLoad: false
-	}
-})
+// Vue.use(VueAnalytics, {
+// 	id: 'UA-143767054-2',
+// 	router,
+// 	autoTracking: {
+// 		pageviewOnLoad: false
+// 	}
+// })
 
 router.beforeEach((to, from, next) => {
 	store.commit('Common/SHOW_MENU_PANE', to.meta.showHeader ? to.meta.showHeader : false)

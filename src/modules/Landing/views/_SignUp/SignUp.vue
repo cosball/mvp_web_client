@@ -172,14 +172,14 @@
               </b-form-checkbox>
             </b-col>
             <b-col lg="4" md="6" class="g-recaptcha-holder">
-              <div class="g-recaptcha">
+              <!-- <div class="g-recaptcha">
                 <vue-recaptcha
                   ref="recaptcha"
                   @expired="onVerify('')"
                   @verify="onVerify"
                   :sitekey="recaptcha_sitekey"
                 ></vue-recaptcha>
-              </div>
+              </div> -->
             </b-col>
             <b-col lg="4" md="12">
               <custom-button

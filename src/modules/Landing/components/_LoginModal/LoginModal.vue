@@ -48,13 +48,13 @@
           ></b-input>
           <span class="error">{{errors.first('password')}}</span>
         </div>
-        <b-row class="justify-content-md-center">
+        <!-- <b-row class="justify-content-md-center">
           <b-col lg="12" class="ml-auto mr-auto mt-3">
             <div class="g-recaptcha">
               <vue-recaptcha ref="recaptcha" @expired="onVerify('')" @verify="onVerify" :sitekey="recaptcha_sitekey"></vue-recaptcha>
             </div>
           </b-col>
-        </b-row>
+        </b-row> -->
       </div>
       <div slot="footer">
         <div class="button-container">

@@ -8,13 +8,13 @@ import {
 	AppService
 } from '@/modules/Common/services'
 
-import VueRecaptcha from 'vue-recaptcha'
+// import VueRecaptcha from 'vue-recaptcha'
 
 export default {
 	components: {
 		'base-modal': BaseModal,
 		CustomButton,
-		VueRecaptcha
+		// VueRecaptcha
 	},
 	created() {
 		window.addEventListener('keyup', this.triggerLoginViaEnterBtn)
@@ -28,7 +28,8 @@ export default {
 					return false
 				}
 			})
-			return isValid && Boolean(this.recaptchaToken)
+			return isValid
+			// return isValid && Boolean(this.recaptchaToken)
 		}
 	},
 	data() {
@@ -39,8 +40,8 @@ export default {
 					password: ''
 				},
 			},
-			recaptchaToken: '',
-			recaptcha_sitekey: process.env.VUE_APP_SITEKEY
+			// recaptchaToken: '',
+			// recaptcha_sitekey: process.env.VUE_APP_SITEKEY
 		}
 	},
 	methods: {

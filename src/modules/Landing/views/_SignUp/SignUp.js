@@ -9,7 +9,7 @@ import {
 	EventBusService
 } from '@/modules/Common/services'
 
-import VueRecaptcha from 'vue-recaptcha'
+// import VueRecaptcha from 'vue-recaptcha'
 
 import {
 	LandingHeader,
@@ -29,7 +29,7 @@ export default {
 		LandingHeader,
 		LandingFooter,
 		SignUpSuccessModal,
-		VueRecaptcha,
+		// VueRecaptcha,
 		Datepicker
 	},
 	props: {},
@@ -44,7 +44,8 @@ export default {
 					return false
 				}
 			})
-			return isValid && this.termAndPolicy === 'true' && Boolean(this.recaptchaToken)
+			return isValid && this.termAndPolicy === 'true'
+			// return isValid && this.termAndPolicy === 'true' && Boolean(this.recaptchaToken)
 		}
 	},
 	data() {
@@ -66,8 +67,8 @@ export default {
 			},
 			confirmPassword: '',
 			termAndPolicy: 'false',
-			recaptchaToken: '',
-			recaptcha_sitekey: process.env.VUE_APP_SITEKEY,
+			// recaptchaToken: '',
+			// recaptcha_sitekey: process.env.VUE_APP_SITEKEY,
 			countryList: {},
 			raceData: {},
 			datepickerOptions: {
@@ -120,7 +121,7 @@ export default {
 					this.inputs.signup[key] = ''
 				})
 				this.termAndPolicy = 'false'
-				this.$refs.recaptcha.reset()
+				// this.$refs.recaptcha.reset()
 				this.$validator.reset()
 				this.$store.commit('Common/SHOW_BASE_LOADER', false)
 			})
