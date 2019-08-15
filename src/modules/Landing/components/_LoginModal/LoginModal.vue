@@ -9,7 +9,7 @@
       </div>
       <div slot="body" class="form-body">
         <div class="small-text d-flex">
-          <p>Are you a new user? Click here to </p>
+          <p>Are you a new user? Click here to</p>
           <b-link @click="signUp">Sign Up</b-link>
         </div>
         <div class="mb-3 required error">*Denotes Required Field</div>
@@ -48,14 +48,33 @@
           ></b-input>
           <span class="error">{{errors.first('password')}}</span>
         </div>
-        <!-- <b-row class="justify-content-md-center">
-          <b-col lg="12" class="ml-auto mr-auto mt-3">
-            <div class="g-recaptcha">
-              <vue-recaptcha ref="recaptcha" @expired="onVerify('')" @verify="onVerify" :sitekey="recaptcha_sitekey"></vue-recaptcha>
+
+        <div class="mb-2">
+          <label/>
+          <div style="width: 100%; background: white; border-radius: 5px; padding: 3px;">
+            <div style="display: flex; justify-content: center; align-items: flex-end;">
+              <span v-html="captcha.data"></span>
+              <span style="margin-left: 20px;">
+                <a href="#" @click="getCaptcha()">
+                  <font-awesome-icon icon="sync-alt" />
+                </a>
+              </span>
             </div>
-          </b-col>
-        </b-row> -->
+
+            <label class="mr-sm-6" style="color:black;">
+              Type the word above
+              <span class="required">*</span>
+            </label>
+            <b-input
+              v-validate="'required'"
+              v-model="inputCaptchaText"
+              class="mb-6 mr-sm-2 mb-sm-0"
+            ></b-input>
+            <span class="error">{{errors.first('inputCaptchaText')}}</span>
+          </div>
+        </div>
       </div>
+
       <div slot="footer">
         <div class="button-container">
           <b-row class="justify-content-md-center">

@@ -115,4 +115,14 @@ export default {
 				})
 		})
 	},
+    GET_CAPTCHA: ({commit, state}) => {
+		return new Promise((resolve, reject) => {
+			CommonApi.getCaptcha()
+				.then((res) => {
+					resolve(res)
+				}, () => {
+					reject('Failed to get Captcha')
+				})
+		})
+	}
 }

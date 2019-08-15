@@ -6,6 +6,10 @@ import {
 	OpenWeatherMapRequest
 } from '@/modules/Common/api/providers'
 
+import {
+	EncryptionService
+} from '@/modules/Common/services'
+
 const CommonApi = {
 	authenticateUser(credentials) {
 		return new Promise((resolve, reject) => {
@@ -76,6 +80,18 @@ const CommonApi = {
 			OpenWeatherMapRequest.get(`weather?${loc}&appid=65ce5151ad23933f30267dfe0bc67807&units=metric`
 			).then((res) => {
 				resolve(res)
+			}).catch(err => {
+				reject(err)
+			})
+		})
+	},
+	getCaptcha() {
+		return new Promise((resolve, reject) => {
+			WebAdminRestRequest.get('captcha'
+			).then((res) => {
+				var jsonStr = EncryptionService.decrypt(res)
+				var obj = JSON.parse(jsonStr)
+				resolve(obj)
 			}).catch(err => {
 				reject(err)
 			})

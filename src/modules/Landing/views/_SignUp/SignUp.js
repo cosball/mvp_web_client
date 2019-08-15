@@ -36,7 +36,8 @@ export default {
 	computed: {
 		isComplete() {
 			let isValid = true
-			console.log(this.inputs.signup)
+			// console.log(this.inputCaptchaText)
+			// console.log(this.captcha.text)
 			Object.keys(this.inputs.signup).forEach((key) => {
 				// console.log('KEY:' + key + ', : ' + this.inputs.signup[key])
 				if (['email', 'country', 'race', 'dob', 'gender'].indexOf(key) !== -1 && !this.inputs.signup[key]) {
@@ -44,7 +45,7 @@ export default {
 					return false
 				}
 			})
-			return isValid && this.termAndPolicy === 'true'
+			return isValid && this.termAndPolicy === 'true' && this.inputCaptchaText === this.captcha.text
 			// return isValid && this.termAndPolicy === 'true' && Boolean(this.recaptchaToken)
 		}
 	},
@@ -60,9 +61,7 @@ export default {
 					dob: '',
 					gender: '',
 					toImprove: [],
-					ongoingProblems: [],
-					roleType: 'User',
-					creator: 'webadmin'
+					ongoingProblems: []
 				}
 			},
 			confirmPassword: '',
@@ -75,7 +74,9 @@ export default {
 				disabledDates: {
 					from: new Date()
 				}
-			}
+			},
+			captcha: {},
+			inputCaptchaText: ''
 		}
 	},
 	methods: {
@@ -87,11 +88,16 @@ export default {
 				name: 'landing'
 			})
 		},
-		onVerify(recaptchaToken) {
-			this.recaptchaToken = recaptchaToken
+		onVerify() {
+			// this.recaptchaToken = recaptchaToken
 		},
 		validatePassword() {
 
+		},
+		getCaptcha() {
+			this.$store.dispatch('Common/GET_CAPTCHA').then((results) => {
+				this.captcha = results
+			})
 		},
 		signup() {
 			if (!this.isComplete) return
@@ -119,8 +125,10 @@ export default {
 				)
 				Object.keys(this.inputs.signup).forEach((key) => {
 					this.inputs.signup[key] = ''
+					this.confirmPassword = ''
 				})
 				this.termAndPolicy = 'false'
+				this.inputCaptchaText = ''
 				// this.$refs.recaptcha.reset()
 				this.$validator.reset()
 				this.$store.commit('Common/SHOW_BASE_LOADER', false)
@@ -128,9 +136,10 @@ export default {
 		}
 	},
 	created() {
-		Promise.all([this.$store.dispatch('Common/GET_COUNTRY_LIST'), this.$store.dispatch('Common/GET_RACE_DATA')]).then((results) => {
+		Promise.all([this.$store.dispatch('Common/GET_COUNTRY_LIST'), this.$store.dispatch('Common/GET_RACE_DATA'), this.$store.dispatch('Common/GET_CAPTCHA')]).then((results) => {
 			this.countryList = results[0].data
 			this.raceData = results[1].data
+			this.captcha = results[2]
 			return Promise.resolve()
 		}).then(() => {
 		})

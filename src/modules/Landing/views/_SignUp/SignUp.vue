@@ -172,14 +172,23 @@
               </b-form-checkbox>
             </b-col>
             <b-col lg="4" md="6" class="g-recaptcha-holder">
-              <!-- <div class="g-recaptcha">
-                <vue-recaptcha
-                  ref="recaptcha"
-                  @expired="onVerify('')"
-                  @verify="onVerify"
-                  :sitekey="recaptcha_sitekey"
-                ></vue-recaptcha>
-              </div> -->
+              <div style="width: 100%; background:white; border-radius: 5px; padding: 5px;">
+                <div style="display: flex; justify-content: center; align-items: flex-end; margin-bottom: 3px;">
+                  <span v-html="captcha.data"></span>
+                  <span style="margin-left: 20px;"><a href="#" @click="getCaptcha()"><font-awesome-icon icon="sync-alt" /></a></span>
+                </div>
+                <div>
+                  <label class="mr-sm-6">
+                    Type the word above
+                    <span class="required">*</span>
+                  </label>
+                  <b-input
+                    v-validate="'required'"
+                    v-model="inputCaptchaText"
+                    class="mb-6 mr-sm-2 mb-sm-0"
+                  ></b-input>
+                </div>
+              </div>
             </b-col>
             <b-col lg="4" md="12">
               <custom-button

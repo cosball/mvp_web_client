@@ -1,13 +1,5 @@
 .login-modal-wrapper {
 
-	& a {
-		color: $theme-base-color-tertiary;
-
-		&:hover {
-			color: $theme-base-color-tertiary-dark;
-		}
-	}
-
 	& p {
 		color: $theme-base-color-lightest;
 	}

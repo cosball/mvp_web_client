@@ -5,6 +5,10 @@ import {
 	BlockChainApiRequest
 } from '@/modules/Common/api/providers'
 
+import {
+	EncryptionService
+} from '@/modules/Common/services'
+
 const LandingApi = {
 	userForgotPassword(email) {
         return new Promise((resolve, reject) => {
@@ -36,8 +40,11 @@ const LandingApi = {
 	},
 	signUp(signUpUserObj) {
 		return new Promise((resolve, reject) => {
+			var text = process.env.VUE_APP_WEB_ADMIN_ACCESS_TOKEN + ',' + Date.now() + ',' + signUpUserObj.username
+			var token = EncryptionService.encrypt(text)
+			signUpUserObj['token'] = token
 			WebAdminRestRequest.post('/users', signUpUserObj).then((res) => {
-				BlockChainApiRequest.post('/account/signup', { username: signUpUserObj.username }).then((res) => {
+				BlockChainApiRequest.post('/account/signup', { username: signUpUserObj.username, token: token }).then((res) => {
 					resolve(res)
 				}).catch(err => {
 					reject(err)

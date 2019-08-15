@@ -18,6 +18,7 @@ export default {
 	},
 	created() {
 		window.addEventListener('keyup', this.triggerLoginViaEnterBtn)
+		this.getCaptcha()
 	},
 	computed: {
 		isComplete() {
@@ -28,8 +29,7 @@ export default {
 					return false
 				}
 			})
-			return isValid
-			// return isValid && Boolean(this.recaptchaToken)
+			return isValid && this.inputCaptchaText === this.captcha.text
 		}
 	},
 	data() {
@@ -40,8 +40,8 @@ export default {
 					password: ''
 				},
 			},
-			// recaptchaToken: '',
-			// recaptcha_sitekey: process.env.VUE_APP_SITEKEY
+			captcha: {},
+			inputCaptchaText: ''
 		}
 	},
 	methods: {
@@ -56,6 +56,12 @@ export default {
 		},
 		onVerify(recaptchaToken) {
 			this.recaptchaToken = recaptchaToken
+		},
+		getCaptcha() {
+			this.$store.dispatch('Common/GET_CAPTCHA').then((results) => {
+				this.captcha = results
+				console.log(results)
+			})
 		},
 		login() {
 			if (!this.isComplete) return

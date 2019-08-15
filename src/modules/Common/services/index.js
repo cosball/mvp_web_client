@@ -10,6 +10,7 @@ import RequestMappingService from './_RequestMappingService'
 import PaginationTableService from './_PaginationTableService'
 import UploadFileService from './_UploadFileService'
 import AwsService from './_AwsService'
+import EncryptionService from './_EncryptionService'
 
 export {
     DateTimeService,
@@ -23,5 +24,6 @@ export {
     RequestMappingService,
     PaginationTableService,
     UploadFileService,
-    AwsService
+    AwsService,
+    EncryptionService
 }
