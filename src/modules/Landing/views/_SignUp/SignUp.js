@@ -125,11 +125,10 @@ export default {
 				)
 				Object.keys(this.inputs.signup).forEach((key) => {
 					this.inputs.signup[key] = ''
-					this.confirmPassword = ''
 				})
 				this.termAndPolicy = 'false'
 				this.inputCaptchaText = ''
-				// this.$refs.recaptcha.reset()
+				this.confirmPassword = ''
 				this.$validator.reset()
 				this.$store.commit('Common/SHOW_BASE_LOADER', false)
 			})

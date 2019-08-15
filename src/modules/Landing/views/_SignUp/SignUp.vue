@@ -55,7 +55,7 @@
                       <b-input
                         v-validate="{ required: inputs.signup.password?true:false, confirmed: inputs.signup.password }"
                         data-vv-as="password"
-                        v-model="inputs.confirmPassword"
+                        v-model="confirmPassword"
                         placeholder="Confirm Password"
                         class="mb-2 mr-sm-2 mb-sm-0"
                         name="confirmPassword"
