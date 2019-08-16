@@ -62,7 +62,7 @@
             </div>
 
             <label class="mr-sm-6" style="color:black;">
-              Type the word above
+              Type the word above(case sensitive)
               <span class="required">*</span>
             </label>
             <b-input
