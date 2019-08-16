@@ -178,7 +178,7 @@
                   <span style="margin-left: 20px;"><a href="#" @click="getCaptcha()"><font-awesome-icon icon="sync-alt" /></a></span>
                 </div>
                 <div>
-                  <label class="mr-sm-6">
+                  <label class="mr-sm-6" style="font-size: 13px;">
                     Type the word above(case sensitive)
                     <span class="required">*</span>
                   </label>

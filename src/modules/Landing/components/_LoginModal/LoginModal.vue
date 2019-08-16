@@ -61,7 +61,7 @@
               </span>
             </div>
 
-            <label class="mr-sm-6" style="color:black;">
+            <label class="mr-sm-6" style="color:black; font-size: 12px;">
               Type the word above(case sensitive)
               <span class="required">*</span>
             </label>
