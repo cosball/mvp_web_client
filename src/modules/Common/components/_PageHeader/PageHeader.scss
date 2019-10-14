@@ -1,13 +1,32 @@
 .page-header-wrapper {
+	height: 50px;
+
 	& .navbar-header {
-		background-color: $theme-base-color-primary;
-		border-color: $theme-base-color-primary;
-		padding-right: 25px;
-		padding-left: 25px;
+		background-color: $theme-base-color-main-top-pane;
+		border-color: $theme-base-color-main-top-pane;
+
+		& .branding {
+			background-color: $theme-base-color-main-left-pane;
+    		width: 240px;
+    		height: 55px;
+			float: left;
+			margin: -0.5rem -1rem;
+		}
 
 		& .navbar-brand {
 			padding-top: 0;
 			padding-bottom: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: -15px;
+			margin-top: 1px;
+			z-index: 1000;
+		}
+
+		& .brand-text {
+			color: $theme-base-color-lightest;
+			margin-left: 15px;
 		}
 
 		& .navbar-toggler {
@@ -30,6 +49,7 @@
 			background-image: url('~@/assets/img/logo.png');
 			width: 50px;
 			height: 50px;
+			background-size: 100% 100%; 
 		}
 
 		& .navbar-nav {

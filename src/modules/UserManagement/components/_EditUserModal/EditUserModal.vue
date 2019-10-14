@@ -12,17 +12,13 @@
         <b-container>
           <b-row>
             <b-col class="set-profile-to-center" cols="12" md="2">
-              <b-row>
-                <b-col cols="12">
-                  <div class="account-icon-container">
-                    <div
-                      v-if="inputs.user.profileURL"
-                      :style="{'background-image': `url(${inputs.user.profileURL})`}"
-                      class="profile-image"
-                    ></div>
-                  </div>
-                </b-col>
-              </b-row>
+              <div class="account-icon-container">
+                <div
+                  v-if="inputs.user.profileURL"
+                  :style="{'background-image': `url(${inputs.user.profileURL})`}"
+                  class="profile-image"
+                ></div>
+              </div>
             </b-col>
 
             <b-col md="7">
@@ -48,19 +44,29 @@
               </b-row>
               <b-row>
                 <label cols="12" md="4" lg="3" xl="2">What do you want to improve?</label>
-                <label class="value" cols="12" md="8" lg="9" xl="10">{{inputs.user.toImprove.join(', ')}}</label>
+                <label
+                  class="value"
+                  cols="12"
+                  md="8"
+                  lg="9"
+                  xl="10"
+                >{{inputs.user.toImprove.join(', ')}}</label>
               </b-row>
               <b-row>
                 <label cols="12" md="4" lg="3" xl="2">Current ongoing skin problems:</label>
-                <label class="value" cols="12" md="8" lg="9" xl="10">{{inputs.user.ongoingProblems.join(', ')}}</label>
+                <label
+                  class="value"
+                  cols="12"
+                  md="8"
+                  lg="9"
+                  xl="10"
+                >{{inputs.user.ongoingProblems.join(', ')}}</label>
               </b-row>
             </b-col>
 
             <b-col md="3">
               <b-row>
-                <label class="mr-sm-2" for="roles">
-                  Roles
-                </label>
+                <label class="mr-sm-2" for="roles">Roles</label>
                 <b-form-select
                   data-vv-as="Roles"
                   v-model="inputs.user.roleType"
@@ -76,11 +82,9 @@
                 </b-form-select>
                 <span class="error">{{errors.first('roles')}}</span>
               </b-row>
-              <br>
+              <br />
               <b-row>
-                <label class="mr-sm-2">
-                  Reset Password
-                </label>
+                <label class="mr-sm-2">Reset Password</label>
                 <b-input
                   v-model="inputs.user.password"
                   class="mb-2 mr-sm-2 mb-sm-0"

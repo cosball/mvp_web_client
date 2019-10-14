@@ -21,7 +21,7 @@ $theme-base-color-lightest: #FFF !default;
 $theme-base-color-darkest: #000 !default;
 $theme-base-color-transparent: transparent !default;
 
-$theme-base-color-primary: #0c0032 !default;
+$theme-base-color-primary: #51445f !default;
 $theme-base-color-primary-light: lighten($theme-base-color-primary, 15%) !default;
 $theme-base-color-primary-lighter: lighten($theme-base-color-primary, 30%) !default;
 $theme-base-color-primary-dark: darken($theme-base-color-primary, 15%) !default;
@@ -94,3 +94,18 @@ $theme-border-color-tertiary-dark: darken($theme-border-color-tertiary, 15%) !de
 $theme-border-color-tertiary-darker: darken($theme-border-color-tertiary, 30%) !default;
 
 $theme-border-color-transparent: transparent !default;
+
+
+$theme-base-color-main-top-pane: #51445f !default;
+$theme-base-color-main-left-pane: #493d55 !default;
+
+$theme-base-color-main-pane-header: #4a555b !default;
+
+$theme-base-color-main-pane-background: #e7eaeb !default;
+$theme-base-color-main-pane-background-light: lighten($theme-base-color-main-pane-background, 15%) !default;
+$theme-base-color-main-pane-background-lighter: lighten($theme-base-color-main-pane-background, 30%) !default;
+$theme-base-color-main-pane-background-dark: darken($theme-base-color-main-pane-background, 15%) !default;
+$theme-base-color-main-pane-background-darker: darken($theme-base-color-main-pane-background, 30%) !default;
+
+
+$theme-base-color-chart-background: #0c0032 !default;

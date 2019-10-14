@@ -5,14 +5,20 @@
         <div class="skindata-content">
           <section class="header-container">
             <b-row>
-              <b-col cols="12" class>
-                <div class="header">Skin Data</div>
+              <b-col lg="9" class>
+                <div class="header custom-font">Skin Data</div>
+              </b-col>
+              <b-col lg="3" md="12">
+                <a role="button" tabindex="0" class="add-button" @click="addNewSkinData">
+                  <font-awesome-icon icon="plus" class="icon-edit"></font-awesome-icon> Add Skin Data
+                </a>
               </b-col>
             </b-row>
           </section>
           <section class="table-container">
             <b-row>
               <b-col cols="12" lg="6" class="per-page-container">
+                <span class="text">Show</span>
                 <b-form-select
                   class="records-per-page-dropdown"
                   v-model="perPage"
@@ -21,45 +27,10 @@
                 ></b-form-select>
                 <span class="text">records per page</span>
               </b-col>
-              <!--
-              <b-col cols="12" lg="6" class="filter-wrapper">
-                <b-input-group>
-                  <b-form-input v-model="filter.filterSearch" placeholder="Filter"></b-form-input>
-                  <b-form-select
-                    slot="append"
-                    class="fields"
-                    v-model="filter.selectedFilterField"
-                    :options="filter.filterFieldOptionsList"
-                    @change="onChangeRecordPerPage"
-                  ></b-form-select>
-                  <b-input-group-text @click="onFilter" class="search-button" slot="append">
-                    <font-awesome-icon slot="append" icon="search"/>
-                  </b-input-group-text>
-                  <b-input-group-text
-                    @click="resetTableListConfiguration"
-                    class="reset-button"
-                    slot="append"
-                  >
-                    <font-awesome-icon slot="append" icon="redo-alt"/>
-                  </b-input-group-text>
-                </b-input-group>
-              </b-col>
-              <b-col cols="12" class="filter-by-wrapper">
-                <div
-                  class="filter-by"
-                  v-for="(filterBy, index) in filter.filterByList"
-                  v-bind:key="index"
-                >
-                  <span>{{filterBy.fieldLabel}}: {{filterBy.filterSearch}}</span>
-                  <span class="delete" @click="deleteFilter(index)">x</span>
-                </div>
-              </b-col>
-              -->
             </b-row>
             <b-row>
               <b-col cols="12">
                 <b-table
-                  striped
                   hover
                   show-empty
                   responsive
@@ -88,10 +59,7 @@
           </section>
           <section class="pagination-container">
             <b-row>
-              <b-col lg="3" md="12">
-                <custom-button class="add-button" @click="addNewSkinData" :inverseColor="true">Add</custom-button>
-              </b-col>
-              <b-col lg="9" md="12">
+              <b-col lg="12" md="12">
                 <b-row align-h="end" class="pagination-configuration">
                   <ul class="pagination pagination-table b-pagination pagination-md">
                     <li class="page-item">

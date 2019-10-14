@@ -45,8 +45,8 @@ export default {
 					return false
 				}
 			})
-			return isValid && this.termAndPolicy === 'true' && this.inputCaptchaText === this.captcha.text
-			// return isValid && this.termAndPolicy === 'true' && Boolean(this.recaptchaToken)
+			return isValid && this.termAndPolicy === 'true'
+			// return isValid && this.termAndPolicy === 'true' && this.inputCaptchaText === this.captcha.text
 		}
 	},
 	data() {
@@ -115,7 +115,7 @@ export default {
 				this.$store.commit('Landing/SET_ROUTE_LEAVE_GUARD_ACTIVE', true)
 				this.$customModal.show(
 					SignUpSuccessModal, {}, {
-						width: '50%',
+						width: '60%',
 						clickToClose: false
 					}, {
 						'before-close': () => {
@@ -135,10 +135,10 @@ export default {
 		}
 	},
 	created() {
-		Promise.all([this.$store.dispatch('Common/GET_COUNTRY_LIST'), this.$store.dispatch('Common/GET_RACE_DATA'), this.$store.dispatch('Common/GET_CAPTCHA')]).then((results) => {
+		Promise.all([this.$store.dispatch('Common/GET_COUNTRY_LIST'), this.$store.dispatch('Common/GET_RACE_DATA')]).then((results) => {
 			this.countryList = results[0].data
 			this.raceData = results[1].data
-			this.captcha = results[2]
+			// this.getCaptcha()
 			return Promise.resolve()
 		}).then(() => {
 		})

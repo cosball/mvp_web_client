@@ -1,17 +1,24 @@
 .landing-wrapper {
-	background-image: url('~@/assets/img/background.webp');
-	background-position: bottom center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	// background-image: url('~@/assets/img/background.webp');
+	// background-position: bottom center;
+	// background-repeat: no-repeat;
+	// background-size: cover;
+
 	// background-attachment: fixed;
 	// transition-timing-function: linear;
 	// transition-delay: 0.3s;
+
+	& .justify-content-md-left {
+		margin-bottom: 20px;
+	}
 
 	& hr {
 		border-color: $theme-base-color-darkest;
 	}
 
 	& .card {
+		background: $theme-base-color-chart-background;
+
 		& .card-title {
 			color: $theme-base-color-tertiary;
 			padding-bottom: 20px;
@@ -22,11 +29,30 @@
 		}
 	}
 
+	& .slideshow-image {
+		max-width: 100%;
+		max-height: 450px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		padding: 5px;
+	}
 
+	& .slideshow-text {
+		width: 80%;
+		text-align: left;
+	}
+
+	& .hooper {
+		height: auto;
+	}
+
+	& .hooper-slide {
+		text-align: center;
+	}
 
 	& .cosball-content {
 		color: $theme-base-color-darkest;
-		margin-top: 70px;
+		margin-top: 50px;
 		margin-bottom: 30px;
 
 		& p {
@@ -37,9 +63,9 @@
 		}
 
 		& h1 {
-			font-size: 2.5rem;
-			font-weight: 600;
-			color: $theme-base-color-tertiary;
+			font-size: 1.7rem;
+			font-weight: 200;
+			color: #505050;
 			margin-bottom: 10px;
 		}
 
@@ -47,6 +73,13 @@
 			font-size: 12px;
 			color: $theme-base-color-darkest;
 		}
+	}
+
+	& .footer {
+		line-height: 2em; 
+		background-color: $theme-base-color-main-pane-background;
+		-webkit-box-pack: center !important;
+		justify-content: center !important;
 	}
 
 	@media (max-width: 991px) {
@@ -60,7 +93,7 @@
 			}
 
 			& h1 {
-				font-size: 1.8rem;
+				font-size: 1.6rem;
 			}
 		}
 	}

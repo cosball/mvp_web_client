@@ -1,20 +1,21 @@
 .menu-pane-wrapper {
+    margin-top: 10px;
 	& .sidebar {
 
         & .row-item-wrapper  {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            color: #fff;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            color: rgba(255, 255, 255, 0.5);
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: $theme-font-size-small;
             cursor: pointer;
             &:hover {
-                background-color: #7B93AF
+                background-color: rgba(0, 0, 0, 0.2);
             }
             &.active {
-                color: #0C0032;
-                background-color: #FFC526;
+                color: #fff;
+                background-color: #16a085;
                 & :hover {
                     color: inherit;
                     background-color: inherit;

@@ -5,8 +5,8 @@
         <div class="account-settings-content">
           <section class="account-header-container">
             <b-row class="justify-content-md-center">
-              <b-col cols="12">
-                <div class="header">Account Settings</div>
+              <b-col xl="12">
+                <div class="header custom-font">Account Settings</div>
                 <div class="go-back" @click="goBack">
                   <font-awesome-icon class="arrow-icon" icon="arrow-left" />Back
                 </div>
@@ -17,11 +17,11 @@
             <transition name="fade">
               <div :class="{'hidden' : !showError}" class="error-message">
                 <b-row>
-                  <b-col cols="10" class="message">
+                  <b-col xl="10" class="message">
                     <b>Error!</b>
                     {{errorMessage}}
                   </b-col>
-                  <b-col cols="2" class="icon">
+                  <b-col xl="2" class="icon">
                     <font-awesome-icon @click="showError = false" class="file-icon" icon="times" />
                   </b-col>
                 </b-row>
@@ -30,9 +30,9 @@
           </section>
           <section class="account-container">
             <b-row>
-              <b-col class="set-profile-to-center" cols="12" md="4" lg="3" xl="2">
+              <b-col class="set-profile-to-center" xl="2">
                 <b-row>
-                  <b-col cols="12">
+                  <b-col xl="12">
                     <div class="account-icon-container">
                       <div
                         v-if="file"
@@ -73,12 +73,12 @@
                 <br />
               </b-col>
 
-              <b-col class="account-informations" cols="12" md="8" lg="9" xl="10">
+              <b-col class="account-informations" xl="10">
                 <b-row>
-                  <b-col md="6">
+                  <b-col xl="6">
                     <b-row>
-                      <b-col md="12">
-                        <label class="mr-sm-2">
+                      <b-col xl="12">
+                        <label class="mr-sm-2 bold">
                           Email Address
                           <span class="required">*</span>
                         </label>
@@ -95,10 +95,10 @@
                       </b-col>
                     </b-row>
                   </b-col>
-                  <b-col md="6">
+                  <b-col xl="6">
                     <b-row>
-                      <b-col md="6">
-                        <label class="mr-sm-2">Password</label>
+                      <b-col xl="6">
+                        <label class="mr-sm-2 bold">Password</label>
                         <b-input
                           v-validate="'min:12'"
                           v-model="inputs.account.password"
@@ -110,8 +110,8 @@
                         ></b-input>
                         <span class="error">{{errors.first('password')}}</span>
                       </b-col>
-                      <b-col md="6">
-                        <label class="mr-sm-2">Confirm Password</label>
+                      <b-col xl="6">
+                        <label class="mr-sm-2 bold">Confirm Password</label>
                         <b-input
                           v-validate="{ required: inputs.account.password?true:false, confirmed: inputs.account.password }"
                           data-vv-as="password"
@@ -128,19 +128,19 @@
                 </b-row>
 
                 <b-row>
-                  <b-col md="6">
+                  <b-col xl="6">
                     <b-row>
-                      <b-col md="12">
+                      <b-col xl="12">
                         <b-row>
-                          <b-col md="6">
-                            <label class="mr-sm-2">
+                          <b-col xl="6">
+                            <label class="mr-sm-2 bold">
                               Country
                               <span class="required">*</span>
                             </label>
                             <b-form-select v-model="inputs.account.country" :options="countryList"></b-form-select>
                           </b-col>
-                          <b-col md="6">
-                            <label class="mr-sm-2">
+                          <b-col xl="6">
+                            <label class="mr-sm-2 bold">
                               Race/Ethnicity
                               <span class="required">*</span>
                             </label>
@@ -150,12 +150,12 @@
                       </b-col>
                     </b-row>
                   </b-col>
-                  <b-col md="6">
+                  <b-col xl="6">
                     <b-row>
-                      <b-col md="12">
+                      <b-col xl="12">
                         <b-row>
-                          <b-col md="6">
-                            <label class="mr-sm-2">
+                          <b-col xl="6">
+                            <label class="mr-sm-2 bold">
                               Date of Birth
                               <span class="required">*</span>
                             </label>
@@ -167,8 +167,8 @@
                               :disabled-dates="datepickerOptions.disabledDates"
                             ></datepicker>
                           </b-col>
-                          <b-col md="6">
-                            <label class="mr-sm-2">
+                          <b-col xl="6">
+                            <label class="mr-sm-2 bold">
                               Gender
                               <span class="required">*</span>
                             </label>
@@ -187,8 +187,8 @@
                 </b-row>
 
                 <b-row>
-                  <b-col md="12">
-                    <label class="mr-sm-12">What you want to improve?</label>
+                  <b-col xl="12">
+                    <label class="mr-sm-12 bold">What you want to improve?</label>
                     <b-form-group>
                       <b-form-checkbox-group v-model="inputs.account.toImprove">
                         <b-form-checkbox value="Freckles/Pigmentation">Freckles/Pigmentation</b-form-checkbox>
@@ -202,8 +202,8 @@
                 </b-row>
 
                 <b-row>
-                  <b-col md="12">
-                    <label class="mr-sm-12">Current ongoing skin problems</label>
+                  <b-col xl="12">
+                    <label class="mr-sm-12 bold">Current ongoing skin problems</label>
                     <b-form-group>
                       <b-form-checkbox-group v-model="inputs.account.ongoingProblems">
                         <b-form-checkbox value="pimples">Pimples</b-form-checkbox>
@@ -216,19 +216,19 @@
                 </b-row>
 
                 <b-row>
-                  <b-col md="12">
-                    <label md="6" class="mr-sm-2">My Wallet Address:</label>
-                    <label md="6" class="mr-sm-2 value">{{accountAddress}}</label>
+                  <b-col xl="12">
+                    <label xl="6" class="mr-sm-2 bold"><font-awesome-icon icon="wallet" /> My Wallet Address:</label>
+                    <label xl="6" class="mr-sm-2 value">{{accountAddress}}</label>
                   </b-col>
                 </b-row>
                 <b-row>
-                  <b-col md="12">
-                    <label md="6" class="mr-sm-2">Balance of COSBALL Token:</label>
-                    <label md="6" class="mr-sm-2 value">{{accountBalance}}</label>
+                  <b-col xl="12">
+                    <label xl="6" class="mr-sm-2 bold"><font-awesome-icon icon="coins" /> Balance of COSBALL Token:</label>
+                    <label xl="6" class="mr-sm-2 value">{{accountBalance}}</label>
                   </b-col>
                 </b-row>
                 <b-row>
-                  <b-col md="12">
+                  <b-col xl="12">
                     <custom-button
                       v-bind:class="{ 'disabled': !isComplete }"
                       class="save-button"

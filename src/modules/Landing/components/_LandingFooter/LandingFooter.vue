@@ -27,7 +27,7 @@
             <div class="cosball-emblem"></div>
             <p style="margin-top:5px;">
               &copy; Copyright 2019
-              <b>JISTD LTD.</b>
+              <b>COSBALL</b>
               <br />all rights reserved.
             </p>
           </b-col>

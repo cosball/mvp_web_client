@@ -1,23 +1,41 @@
 .skindata-wrapper {
 	& .body {
-		background-color: $theme-base-color-background;
+		background-color: $theme-base-color-main-pane-background;
 
 		& .skindata-content {
-			padding: 30px 50px;
+			padding: 20px 15px;
 
 			& .header-container {
-				padding-bottom: 15px;
+				background-color: $theme-base-color-lightest;
+				padding-left: 1.125em;
+				padding-bottom: 10px;
+				margin-bottom: 5px;
 
 				& .header {
-					color: $theme-base-color-lightest;
-					font-weight: 500;
+					color: $theme-base-color-main-pane-header;
+					display: inline-block;
+					font-size: 1.2rem;
+					font-weight: 700;
+					margin-top: 10px;
+				}
+
+				& .add-button {
+					display:block;
+    				min-width: 41px;
+    				padding: 0 10px;
+    				text-align: center;
+					color: #95a2a9;
+					cursor: pointer;
+					border-left: 1px solid rgba(0, 0, 0, 0.1);
+					margin-top: 10px;
+					float: right;
 				}
 			}
 
 			& .table-container {
 				display: block;
 				padding: 20px;
-				background-color: $theme-base-color-primary;
+				background-color: $theme-base-color-lightest;
 
 				& .per-page-container {
 					padding-bottom: 20px;
@@ -27,9 +45,10 @@
 					}
 
 					& .text {
-						color: $theme-base-color-lightest;
+						color: $theme-base-color-darkest;
 						font-size: $theme-font-size-xtra-small;
 						padding-left: 10px;
+						padding-right: 10px;
 					}
 				}
 
@@ -85,7 +104,7 @@
 					font-size: $theme-font-size-small;
 
 					& td {
-						padding: 0.5rem;
+						padding: 0.4rem 0.5rem;
 					}
 
 					& .icon-view {
@@ -95,7 +114,7 @@
 
 					& .link {
 						color: $theme-base-color-secondary;
-						text-decoration: underline;
+						// text-decoration: underline;
 						cursor: pointer;
 					}
 				}
@@ -104,6 +123,7 @@
 			& .pagination-container {
 				width: 100%;
 				padding-top: 20px;
+				margin-bottom: 20px;
 
 				& .add-button {
 					width: 150px;

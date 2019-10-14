@@ -1,24 +1,26 @@
 .account-settings-wrapper {
+	background-color: #eeeeee;
 
 	& .body {
-		background-color: $theme-base-color-background;
+		padding: 30px 50px;
 
 		& .account-settings-content {
+
 			max-width: 1200px;
-			padding: 30px 50px;
 
 			& .account-header-container {
 				padding-bottom: 15px;
 
 				& .header {
-					color: $theme-base-color-lightest;
-					font-weight: 500;
+					color: $theme-base-color-darkest;
+					font-size: 1.2rem;
+					font-weight: 700;
 				}
 
 				& .go-back {
 					color: $theme-base-color-tertiary;
 					cursor: pointer;
-					font-size: $theme-font-size-xtra-small;
+					font-size: $theme-font-size-small;
 					padding-top: 10px;
 
 					& .arrow-icon {
@@ -33,8 +35,8 @@
 					padding: 10px 15px;
 					border-radius: 5px;
 					margin-bottom: 10px;
-					font-size: $theme-font-size-xtra-small;
-					color: $theme-base-color-lightest;
+					font-size: $theme-font-size-small;
+					color: $theme-base-color-darkest;
 
 					&.hidden {
 						visibility: hidden;
@@ -50,8 +52,8 @@
 			}
 
 			& .account-container {
-				color: $theme-base-color-lightest;
-				font-size: $theme-font-size-xtra-small;
+				color: $theme-base-color-darkest;
+				font-size: $theme-font-size-small;
 				padding-top: 10px;
 
 				& .account-icon-container {
@@ -65,6 +67,9 @@
 						background-image: url('~@/assets/img/acc-settings.png');
 						width: 120px;
 						height: 120px;
+						// width: 100%;
+						// height: 100%;
+						background-size: 100% 100%; 
 					}
 
 					& .profile-image {
@@ -87,17 +92,17 @@
 					}
 
 					& .reset-button {
-						color: $theme-base-color-lightest;
+						color: $theme-base-color-darkest;
 					}
 
 					& .browse-button {
 						& .custom-button-inner-wrapper {
 							background-color: $theme-font-color-primary-light;
-							color: $theme-base-color-lightest;
+							color: $theme-base-color-darkest;
 
 							& .content-left {
 								left: 12px;
-								top: 12px;
+								top: 8px;
 							}
 
 							&:hover {
@@ -125,10 +130,15 @@
 						
 						& label {
 							user-select: text;
+							font-size: 1rem;
+						}
+
+						& label.bold {
+							font-weight: 600;
 						}
 					
 						& .value {
-							color: $theme-base-color-tertiary;
+							color: $theme-base-color-secondary;
 						}
 					}
 				}

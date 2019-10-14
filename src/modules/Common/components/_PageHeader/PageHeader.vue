@@ -1,9 +1,14 @@
 <template>
   <div class="page-header-wrapper">
     <b-navbar class="navbar-header" toggleable="lg">
-      <b-navbar-brand href="#">
-        <div class="img-responsive header-logo"></div>
-      </b-navbar-brand>
+      <div class="branding">
+        <b-navbar-brand href="#">
+          <div class="img-responsive header-logo"></div>
+          <span class="brand-text">
+            <b>COSBALL</b>
+          </span>
+        </b-navbar-brand>
+      </div>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
@@ -11,82 +16,8 @@
         <b-navbar-nav class="ml-auto">
           <b-nav-form
             class="search-bar-container d-none d-sm-block d-md-block d-lg-block d-xl-block mt-1"
-          >
-            <!--
-            <b-input-group>
-              <b-form-select
-                slot="prepend"
-                v-model="filterBy"
-                class="filter-by"
-                :options="filterByList"
-                name="filterBy"
-              ></b-form-select>
-              <b-form-input
-                size="md"
-                class="search-bar"
-                v-model="addressTransactionHash"
-                placeholder="Search By Address or Transaction Hash"
-              ></b-form-input>
-              <b-input-group-text
-                slot="append"
-                class="search-bar-icon"
-                disabled="true"
-                @click="goToTransactionDetail"
-              >
-                <font-awesome-icon icon="search"/>
-              </b-input-group-text>
-            </b-input-group>
-            -->
-          </b-nav-form>
-          <b-nav-form class="search-bar-container-responsive d-block d-sm-none">
-            <!--
-            <b-form-select
-              v-model="filterBy"
-              class="filter-by"
-              :options="filterByList"
-              name="filterBy"
-            ></b-form-select>
-            <b-form-input
-              size="md"
-              class="search-bar"
-              v-model="addressTransactionHash"
-              placeholder="Search By Address or Transaction Hash"
-            ></b-form-input>
-            <custom-button
-              class="search-button"
-              @click="goToTransactionDetail"
-              :inverseColor="true"
-            >Search</custom-button>
-            -->
-          </b-nav-form>
-          <!--
-          <b-nav-item-dropdown class="notification-dropdown" no-caret right>
-            <template slot="button-content">
-              <div class="notification-container">
-                <div class="notification-icon"></div>
-              </div>
-            </template>
-            <b-dropdown-header class="header">Notifications</b-dropdown-header>
-            <b-dropdown-item>
-              <div class="notification">
-                <div class="icon">
-                  <font-awesome-icon icon="times"/>
-                </div>
-                <div class="message">
-                  <div class="font-weight-bold">Added Address</div>
-                  <div
-                    class="description"
-                  >Address added in skindata for address 12312331masd12399123m</div>
-                </div>
-              </div>
-            </b-dropdown-item>
-            <b-dropdown-header class="header">See All</b-dropdown-header>
-          </b-nav-item-dropdown>
-
-          <b-nav-item class="line-position">
-            <div class="line"></div>
-          </b-nav-item>
-          -->
+          ></b-nav-form>
+          <b-nav-form class="search-bar-container-responsive d-block d-sm-none"></b-nav-form>
 
           <b-nav-item-dropdown no-caret class="profile-dropdown" right>
             <template slot="button-content">

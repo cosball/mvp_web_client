@@ -1,12 +1,12 @@
 .signup-wrapper {
-	background-image: url('~@/assets/img/background.webp');
-	background-position: bottom center;
-	background-repeat: no-repeat;
-	background-size: cover;
-    transition-delay: 0.3s;
+	// background-image: url('~@/assets/img/background.webp');
+	// background-position: bottom center;
+	// background-repeat: no-repeat;
+	// background-size: cover;
+    // transition-delay: 0.3s;
 
     .header {
-        margin-top: 30px;
+        // margin-top: 30px;
         width: 100%;
 
         & .modal-title {
@@ -106,8 +106,12 @@
 
 		& label {
 			color: $theme-base-color-darkest;
-			font-size: 13px;
+			font-size: 1rem;
 			margin: 25px 0 10px;
+		}
+		
+		& label.bold {
+			font-weight: 600;
 		}
 
 		& .custom-control-label {
@@ -154,5 +158,12 @@
 		border-radius: 5px;
 		border: 1px solid #d29901;
 		box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 1px #d29901;
+	}	
+
+	& .footer {
+		line-height: 2em; 
+		background-color: $theme-base-color-main-pane-background;
+		-webkit-box-pack: center !important;
+		justify-content: center !important;
 	}
 }

@@ -12,103 +12,56 @@
       <div slot="body" class="form-body">
         <b-container>
           <b-row>
-            <b-col cols="12">
-              <label class="mr-sm-2 weather-data">Location : {{ inputs.skindata.location }}</label>
+            <b-col md="12">
+              <label class="mr-sm-2 weather-data">Location: {{ inputs.skindata.location }}</label>
             </b-col>
           </b-row>
           <b-row>
-            <b-col cols="3">
-              <label class="mr-sm-2 weather-data">Weather : {{ inputs.skindata.weather }}</label>
+            <b-col md="3">
+              <label class="mr-sm-2 weather-data">Weather: {{ inputs.skindata.weather }}</label>
             </b-col>
-            <b-col cols="3">
-              <label class="mr-sm-2 weather-data">Temp. : {{ inputs.skindata.temperature }}°C</label>
+            <b-col md="3">
+              <label class="mr-sm-2 weather-data">Temp.: <span v-if="inputs.skindata.temperature">{{ inputs.skindata.temperature }}°C</span></label>
             </b-col>
-            <b-col cols="3">
-              <label class="mr-sm-2 weather-data">Humidity : {{ inputs.skindata.humidity }}%</label>
+            <b-col md="3">
+              <label class="mr-sm-2 weather-data">Humidity: <span v-if="inputs.skindata.humidity">{{ inputs.skindata.humidity }}%</span></label>
             </b-col>
-            <b-col cols="3">
-              <label class="mr-sm-2 weather-data">Pressure : {{ inputs.skindata.pressure }}hPa</label>
+            <b-col md="3">
+              <label class="mr-sm-2 weather-data">Pressure: <span v-if="inputs.skindata.pressure">{{ inputs.skindata.pressure }}hPa</span></label>
             </b-col>
           </b-row>
           <b-row>
-            <b-col cols="4">
+            <b-col md="4">
               <label class="mr-sm-2">
-                Moisture
+                Skin Health
                 <span class="required">*</span>
               </label>
               <b-input
                 type="number"
                 v-validate="'required|integer|min_value:0|max_value:100'"
-                data-vv-as="Moisture"
+                data-vv-as="Skin Health"
                 v-model="inputs.skindata.moisture"
                 class="mb-2 mr-sm-2 mb-sm-0"
                 name="moisture"
               ></b-input>
               <span class="error">{{errors.first('moisture')}}</span>
             </b-col>
-            <b-col cols="4">
+            <b-col md="4">
               <label class="mr-sm-2">
-                Oil
+                Blemish
                 <span class="required">*</span>
               </label>
               <b-input
                 type="number"
                 v-validate="'required|integer|min_value:0|max_value:100'"
-                data-vv-as="Oil"
+                data-vv-as="Blemish"
                 v-model="inputs.skindata.oil"
                 class="mb-2 mr-sm-2 mb-sm-0"
                 name="oil"
               ></b-input>
               <span class="error">{{errors.first('oil')}}</span>
             </b-col>
-            <b-col cols="4">
-              <label class="mr-sm-2">
-                Pore
-                <span class="required">*</span>
-              </label>
-              <b-input
-                type="number"
-                v-validate="'required|integer|min_value:0|max_value:100'"
-                data-vv-as="Pore"
-                v-model="inputs.skindata.pore"
-                class="mb-2 mr-sm-2 mb-sm-0"
-                name="pore"
-              ></b-input>
-              <span class="error">{{errors.first('pore')}}</span>
-            </b-col>
-          </b-row>
-          <b-row>
-            <b-col cols="4">
-              <label class="mr-sm-2">
-                Temperature
-                <span class="required">*</span>
-              </label>
-              <b-input
-                type="number"
-                v-validate="'required|integer|min_value:0|max_value:100'"
-                data-vv-as="Temperature"
-                v-model="inputs.skindata.skinTemperature"
-                class="mb-2 mr-sm-2 mb-sm-0"
-                name="skinTemperature"
-              ></b-input>
-              <span class="error">{{errors.first('skinTemperature')}}</span>
-            </b-col>
-            <b-col cols="4">
-              <label class="mr-sm-2">
-                Skin tone
-                <span class="required">*</span>
-              </label>
-              <b-input
-                type="number"
-                v-validate="'required|integer|min_value:0|max_value:100'"
-                data-vv-as="Skin tone"
-                v-model="inputs.skindata.skinTone"
-                class="mb-2 mr-sm-2 mb-sm-0"
-                name="skinTone"
-              ></b-input>
-              <span class="error">{{errors.first('skinTone')}}</span>
-            </b-col>
-            <b-col cols="4">
+            <b-col md="4">
               <label class="mr-sm-2">
                 Wrinkle
                 <span class="required">*</span>
@@ -125,7 +78,54 @@
             </b-col>
           </b-row>
           <b-row>
-            <b-col cols="12">
+            <b-col md="4">
+              <label class="mr-sm-2">
+                Skin Texture
+                <span class="required">*</span>
+              </label>
+              <b-input
+                type="number"
+                v-validate="'required|integer|min_value:0|max_value:100'"
+                data-vv-as="Skin Texture"
+                v-model="inputs.skindata.pore"
+                class="mb-2 mr-sm-2 mb-sm-0"
+                name="pore"
+              ></b-input>
+              <span class="error">{{errors.first('pore')}}</span>
+            </b-col>
+            <b-col md="4">
+              <label class="mr-sm-2">
+                Dark Circles
+                <span class="required">*</span>
+              </label>
+              <b-input
+                type="number"
+                v-validate="'required|integer|min_value:0|max_value:100'"
+                data-vv-as="Dark Circles"
+                v-model="inputs.skindata.skinTone"
+                class="mb-2 mr-sm-2 mb-sm-0"
+                name="skinTone"
+              ></b-input>
+              <span class="error">{{errors.first('skinTone')}}</span>
+            </b-col>
+            <b-col md="4">
+              <label class="mr-sm-2">
+                Skin Age
+                <span class="required">*</span>
+              </label>
+              <b-input
+                type="number"
+                v-validate="'required|integer|min_value:0|max_value:100'"
+                data-vv-as="Skin Age"
+                v-model="inputs.skindata.skinTemperature"
+                class="mb-2 mr-sm-2 mb-sm-0"
+                name="skinTemperature"
+              ></b-input>
+              <span class="error">{{errors.first('skinTemperature')}}</span>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col md="12">
               <div class="checkbox">
                 <b-form-checkbox
                   id="termAndPolicy"

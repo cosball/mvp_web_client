@@ -45,32 +45,32 @@ export default {
 				},
 				{
 					key: 'moisture',
-					label: 'Moisture',
+					label: 'Skin Health',
 					sortable: true
 				},
 				{
 					key: 'oil',
-					label: 'Oil',
-					sortable: true
-				},
-				{
-					key: 'pore',
-					label: 'Pore',
-					sortable: true
-				},
-				{
-					key: 'skinTemperature',
-					label: 'Temperature',
-					sortable: true
-				},
-				{
-					key: 'skinTone',
-					label: 'Skin tone',
+					label: 'Blemish',
 					sortable: true
 				},
 				{
 					key: 'wrinkle',
 					label: 'Wrinkle',
+					sortable: true
+				},
+				{
+					key: 'pore',
+					label: 'Skin Texture',
+					sortable: true
+				},
+				{
+					key: 'skinTone',
+					label: 'Dark Circles',
+					sortable: true
+				},
+				{
+					key: 'skinTemperature',
+					label: 'Skin Age',
 					sortable: true
 				},
 				{
@@ -217,7 +217,7 @@ export default {
 			this.$store.commit('SkinData/SET_ROUTE_LEAVE_GUARD_ACTIVE', true)
 			this.$customModal.show(
 				AddSkinDataModal, {}, {
-					width: '50%',
+					width: '70%',
 					clickToClose: false
 				}, {
 					'before-close': () => {
@@ -234,7 +234,7 @@ export default {
 			this.$store.commit('SkinData/SET_SKINDATA', item)
 			this.$customModal.show(
 				ViewSkinDataModal, {}, {
-					width: '50%',
+					width: '70%',
 					clickToClose: false
 				}, {
 					'before-close': () => {

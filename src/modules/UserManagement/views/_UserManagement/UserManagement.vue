@@ -5,8 +5,8 @@
         <div class="user-management-content">
           <section class="header-container">
             <b-row>
-              <b-col cols="12" class>
-                <div class="header">User Management</div>
+              <b-col lg="12" class>
+                <div class="header custom-font">User Management</div>
               </b-col>
             </b-row>
           </section>
@@ -14,6 +14,7 @@
             <b-row>
               <b-col cols="12">
                 <div class="per-page-container">
+                  <span class="text">Show</span>
                   <b-form-select
                     class="records-per-page-dropdown"
                     v-model="perPage"
@@ -27,7 +28,6 @@
             <b-row>
               <b-col cols="12">
                 <b-table
-                  striped
                   hover
                   show-empty
                   responsive
@@ -52,7 +52,7 @@
             <b-row>
               <!-- <b-col lg="3" md="12">
                 <custom-button class="add-button" @click="addNewUser" :inverseColor="true">Add</custom-button>
-              </b-col> -->
+              </b-col>-->
 
               <b-col lg="12" md="12">
                 <b-row align-h="end" class="pagination-configuration">

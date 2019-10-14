@@ -43,7 +43,7 @@ export default {
 			let isValid = true
 			// console.log(this.inputs.skindata)
 			Object.keys(this.inputs.skindata).forEach((key, value) => {
-				if (!this.inputs.skindata[key]) {
+				if (['moisture', 'oil', 'pore', 'skinTemperature', 'skinTone', 'wrinkle'].indexOf(key) > -1 && !this.inputs.skindata[key]) {
 					isValid = false
 					return false
 				}
@@ -66,7 +66,7 @@ export default {
 							SkinDataUpdateCreateSuccessfulModal, {
 								action: 'add'
 							}, {
-								width: '50%',
+								width: '60%',
 								clickToClose: false
 							}, {
 								'before-close': () => {

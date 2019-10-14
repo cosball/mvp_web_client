@@ -6,9 +6,8 @@
 	}
 
 	& .text-container {
-		padding: 20px;
+		padding: 20px 20px 20px 30px;
 		font-size: 20px;
-		text-align: center;
 		color: white;
 
 		& .text-yellow {
@@ -21,6 +20,18 @@
 		font-size: 16px;
 		text-align: left;
 		color: $theme-base-color-tertiary;
+	}
+
+	& .cosball {
+		height: 26px;
+		width: 26px;
+		margin: 1px;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+		border-radius: 50%;
+		background: blue;
+		color: white;
 	}
 
 	& .ok-button {

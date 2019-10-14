@@ -18,7 +18,7 @@ export default {
 	},
 	created() {
 		window.addEventListener('keyup', this.triggerLoginViaEnterBtn)
-		this.getCaptcha()
+		// this.getCaptcha()
 	},
 	computed: {
 		isComplete() {
@@ -29,7 +29,8 @@ export default {
 					return false
 				}
 			})
-			return isValid && this.inputCaptchaText === this.captcha.text
+			return isValid
+			// return isValid && this.inputCaptchaText === this.captcha.text
 		}
 	},
 	data() {

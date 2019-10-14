@@ -49,7 +49,7 @@
           <span class="error">{{errors.first('password')}}</span>
         </div>
 
-        <div class="mb-2">
+        <!-- <div class="mb-2">
           <label/>
           <div style="width: 100%; background: white; border-radius: 5px; padding: 3px;">
             <div style="display: flex; justify-content: center; align-items: flex-end;">
@@ -72,7 +72,7 @@
             ></b-input>
             <span class="error">{{errors.first('inputCaptchaText')}}</span>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div slot="footer">

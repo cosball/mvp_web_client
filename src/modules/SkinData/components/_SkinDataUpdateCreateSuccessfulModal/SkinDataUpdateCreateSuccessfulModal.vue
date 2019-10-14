@@ -14,14 +14,13 @@
                 <div>New skin data has been added successfully</div>
                 <br />
                 <div class="returned-data">
-                  <b-row>
-                    <b-col md="8">
-                      <div>Recommened Cosball Product : {{ skindata.recommenedCosball }}</div>
-                    </b-col>
-                    <b-col md="4">
-                      <div>Reward Point : {{ skindata.rewardPoint }}</div>
-                    </b-col>
-                  </b-row>
+                  Recommened Cosball Product :
+                  <span v-for="item of cosballProducts" :key="item">
+                    <span v-html="item"></span>
+                  </span>
+                </div>
+                <div class="returned-data">
+                  Reward Point(<font-awesome-icon icon="coins" />) : {{ skindata.rewardPoint }}
                 </div>
               </div>
             </b-col>

@@ -13,7 +13,7 @@
         <div class="form-body">
           <b-row>
             <b-col md="6">
-              <label class="mr-sm-2">
+              <label class="mr-sm-2 bold">
                 Email Address
                 <span class="required">*</span>
               </label>
@@ -32,7 +32,7 @@
                 <b-col md="12">
                   <b-row>
                     <b-col md="6">
-                      <label class="mr-sm-2">
+                      <label class="mr-sm-2 bold">
                         Password
                         <span class="required">*</span>
                       </label>
@@ -48,7 +48,7 @@
                       <span class="error">{{errors.first('password')}}</span>
                     </b-col>
                     <b-col md="6">
-                      <label class="mr-sm-2">
+                      <label class="mr-sm-2 bold">
                         Confirm Password
                         <span class="required">*</span>
                       </label>
@@ -75,14 +75,14 @@
                 <b-col md="12">
                   <b-row>
                     <b-col md="6">
-                      <label class="mr-sm-2">
+                      <label class="mr-sm-2 bold">
                         Country
                         <span class="required">*</span>
                       </label>
                       <b-form-select v-model="inputs.signup.country" :options="countryList"></b-form-select>
                     </b-col>
                     <b-col md="6">
-                      <label class="mr-sm-2">
+                      <label class="mr-sm-2 bold">
                         Race/Ethnicity
                         <span class="required">*</span>
                       </label>
@@ -97,7 +97,7 @@
                 <b-col md="12">
                   <b-row>
                     <b-col md="6">
-                      <label class="mr-sm-2">
+                      <label class="mr-sm-2 bold">
                         Date of Birth
                         <span class="required">*</span>
                       </label>
@@ -110,7 +110,7 @@
                       ></datepicker>
                     </b-col>
                     <b-col md="6">
-                      <label class="mr-sm-2">
+                      <label class="mr-sm-2 bold">
                         Gender
                         <span class="required">*</span>
                       </label>
@@ -127,7 +127,7 @@
 
           <b-row>
             <b-col md="12">
-              <label class="mr-sm-12">What you want to improve?</label>
+              <label class="mr-sm-12 bold">What you want to improve?</label>
               <b-form-group>
                 <b-form-checkbox-group v-model="inputs.signup.toImprove">
                   <b-form-checkbox value="Freckles/Pigmentation">Freckles/Pigmentation</b-form-checkbox>
@@ -142,7 +142,7 @@
 
           <b-row>
             <b-col md="12">
-              <label class="mr-sm-12">Current ongoing skin problems</label>
+              <label class="mr-sm-12 bold">Current ongoing skin problems</label>
               <b-form-group>
                 <b-form-checkbox-group v-model="inputs.signup.ongoingProblems">
                   <b-form-checkbox value="pimples">Pimples</b-form-checkbox>
@@ -157,6 +157,31 @@
 
         <div class="verification-container m-md-5">
           <b-row>
+            <b-col lg="4" md="6" class="g-recaptcha-holder">
+              <!-- <div style="width: 100%; background:white; border-radius: 5px; padding: 5px;">
+                <div
+                  style="display: flex; justify-content: center; align-items: flex-end; margin-bottom: 3px;"
+                >
+                  <span v-html="captcha.data"></span>
+                  <span style="margin-left: 20px;">
+                    <a href="#" @click="getCaptcha()">
+                      <font-awesome-icon icon="sync-alt" />
+                    </a>
+                  </span>
+                </div>
+                <div>
+                  <label class="mr-sm-6" style="font-size: 13px;">
+                    Type the word above(case sensitive)
+                    <span class="required">*</span>
+                  </label>
+                  <b-input
+                    v-validate="'required'"
+                    v-model="inputCaptchaText"
+                    class="mb-6 mr-sm-2 mb-sm-0"
+                  ></b-input>
+                </div>
+              </div> -->
+            </b-col>
             <b-col lg="4" md="6">
               <b-form-checkbox
                 id="termAndPolicy"
@@ -171,25 +196,6 @@
                 <span class="font-yellow">Terms of Service</span>
               </b-form-checkbox>
             </b-col>
-            <b-col lg="4" md="6" class="g-recaptcha-holder">
-              <div style="width: 100%; background:white; border-radius: 5px; padding: 5px;">
-                <div style="display: flex; justify-content: center; align-items: flex-end; margin-bottom: 3px;">
-                  <span v-html="captcha.data"></span>
-                  <span style="margin-left: 20px;"><a href="#" @click="getCaptcha()"><font-awesome-icon icon="sync-alt" /></a></span>
-                </div>
-                <div>
-                  <label class="mr-sm-6" style="font-size: 13px;">
-                    Type the word above(case sensitive)
-                    <span class="required">*</span>
-                  </label>
-                  <b-input
-                    v-validate="'required'"
-                    v-model="inputCaptchaText"
-                    class="mb-6 mr-sm-2 mb-sm-0"
-                  ></b-input>
-                </div>
-              </div>
-            </b-col>
             <b-col lg="4" md="12">
               <custom-button
                 v-bind:class="{ 'disabled': !isComplete }"
@@ -201,8 +207,10 @@
           </b-row>
         </div>
       </b-container>
+
+      <b-row class="mb-1 mt-3 footer">Copyright 2019. COSBALL all rights reserved.</b-row>
     </div>
-    <LandingFooter slot="footer"></LandingFooter>
+    <!-- <LandingFooter slot="footer"></LandingFooter> -->
   </LayoutContainer>
 </template>
 

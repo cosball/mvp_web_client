@@ -9,6 +9,16 @@
 			padding-top: 0;
 			padding-bottom: 0;
 			cursor: pointer;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		& .brand-text {
+			color: #707070;
+			font-size: 30px;
+			margin-left: 15px;
 		}
 
 		& .navbar-toggler {
@@ -30,8 +40,9 @@
 			background-size: cover;
 			background-image: url('~@/assets/img/logo.png');
 			margin-top: 10px;
-			width: 100px;
-			height: 100px;
+			width: 60px;
+			height: 60px;
+			background-size: 100% 100%; 
 		}
 	}
 

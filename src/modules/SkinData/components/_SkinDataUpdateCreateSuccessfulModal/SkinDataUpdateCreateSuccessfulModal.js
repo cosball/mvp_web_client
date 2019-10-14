@@ -39,7 +39,16 @@ export default {
 				recommenedCosball: this.$store.state.SkinData.skindata.recommenedCosball,
 				transactionHash: this.$store.state.SkinData.skindata.transactionHash,
 				createdAt: this.$store.state.SkinData.skindata.createdAt
-			}
+			},
+			cosballColor: {
+				A: 'rgb(23, 115, 181)',
+				B: 'rgb(213, 38, 40)',
+				C: 'rgb(99, 158, 70)',
+				D: 'rgb(93, 56, 134)',
+				E: 'rgb(217, 158, 56)',
+				F: 'rgb(146, 31, 116)',
+			},
+			cosballProducts: []
 		}
 	},
 	methods: {
@@ -51,6 +60,11 @@ export default {
 
 	},
 	mounted() {
+		this.cosballProducts = []
+		for (let cosball of this.skindata.recommenedCosball.split(',')) {
+			var html = '<span class="cosball" style="background:' + this.cosballColor[cosball[0]] + ';">' + cosball + '</span>'
+			this.cosballProducts.push(html)
+		}
 		EventBusService.$on('CLOSE_CUSTOM_MODAL', this.closeModal)
 	},
 	beforeDestroy() {

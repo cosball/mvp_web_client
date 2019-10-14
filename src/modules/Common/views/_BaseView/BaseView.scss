@@ -14,12 +14,13 @@
 			}
 
 			& .left-pane {
+				padding-top: 10px;
 				flex: none;
 				position: relative;
 				display: inline-block;
 				width: 240px;
 				height: 100%;
-				background-color: $theme-base-color-primary;
+				background-color: $theme-base-color-main-left-pane;
 				transition: all 0.30s ease-out;
 			}
 

@@ -1,21 +1,40 @@
 .table {
 	& th {
-		background-color: $theme-base-color-primary;
+		background-color: $theme-base-color-lightest;
 		border-top: 0;
-		color: $theme-base-color-lightest;
-		font-weight: normal;
+		color: #798992;
+		font-weight: bold;
+		font-size: 14px;
 		padding-top: 10px;
 		padding-bottom: 10px;
 		padding-left: 10px;
 
+		
+		&[aria-sort]:hover {
+		color: #428bca;
+		border-color: #428bca;
+		background-color: #fafafa;
+	  }
+	  
+		&[aria-sort="ascending"],
+		&[aria-sort="descending"] {
+			color: #428bca;
+			border-color: #428bca;
+			background-color: #fafafa;
+		}
+
 		&[aria-sort]::after {
-			color: $theme-base-color-lightest !important;
-			opacity: 1 !important;
+			content: "\f0dc";
+			color: #428bca;
+			border-color: #428bca;
+			background-color: #fafafa;
 		}
 
 		&[aria-sort="ascending"]::after,
 		&[aria-sort="descending"]::after {
-			color: $theme-base-color-tertiary !important;
+			color: #428bca;
+			border-color: #428bca;
+			background-color: #fafafa;
 		}
 	}
 
@@ -49,4 +68,8 @@
 	background-color: $theme-base-color-tertiary;
     box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 1px #d29901;
     outline: 0 none;
+}
+
+.custom-font {
+	font-family: "Dosis", "Arial", sans-serif;
 }

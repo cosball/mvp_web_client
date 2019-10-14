@@ -15,7 +15,7 @@ const defaultState = {
 		routeName: 'SkinData',
 		accessible: ['Super', 'Admin', 'User']
 	}, {
-		icon: 'list-alt',
+		icon: 'coins',
 		label: 'Reward History',
 		routeName: 'RewardHistory',
 		accessible: ['Super', 'Admin', 'User']

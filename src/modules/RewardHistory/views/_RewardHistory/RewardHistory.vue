@@ -1,18 +1,19 @@
 <template>
   <div>
-    <LayoutContainer class="skindata-wrapper">
+    <LayoutContainer class="rewardhistory-wrapper">
       <template slot="body">
-        <div class="skindata-content">
+        <div class="rewardhistory-content">
           <section class="header-container">
             <b-row>
-              <b-col cols="12" class>
-                <div class="header">Reward History</div>
+              <b-col lg="12" class>
+                <div class="header custom-font">Reward History</div>
               </b-col>
             </b-row>
           </section>
           <section class="table-container">
             <b-row>
               <b-col cols="12" lg="6" class="per-page-container">
+                <span class="text">Show</span>
                 <b-form-select
                   class="records-per-page-dropdown"
                   v-model="perPage"
@@ -21,46 +22,10 @@
                 ></b-form-select>
                 <span class="text">records per page</span>
               </b-col>
-
-              <!--
-              <b-col cols="12" lg="6" class="filter-wrapper">
-                <b-input-group>
-                  <b-form-input v-model="filter.filterSearch" placeholder="Filter"></b-form-input>
-                  <b-form-select
-                    slot="append"
-                    class="fields"
-                    v-model="filter.selectedFilterField"
-                    :options="filter.filterFieldOptionsList"
-                    @change="onChangeRecordPerPage"
-                  ></b-form-select>
-                  <b-input-group-text @click="onFilter" class="search-button" slot="append">
-                    <font-awesome-icon slot="append" icon="search"/>
-                  </b-input-group-text>
-                  <b-input-group-text
-                    @click="resetTableListConfiguration"
-                    class="reset-button"
-                    slot="append"
-                  >
-                    <font-awesome-icon slot="append" icon="redo-alt"/>
-                  </b-input-group-text>
-                </b-input-group>
-              </b-col>
-              <b-col cols="12" class="filter-by-wrapper">
-                <div
-                  class="filter-by"
-                  v-for="(filterBy, index) in filter.filterByList"
-                  v-bind:key="index"
-                >
-                  <span>{{filterBy.fieldLabel}}: {{filterBy.filterSearch}}</span>
-                  <span class="delete" @click="deleteFilter(index)">x</span>
-                </div>
-              </b-col>
-              -->
             </b-row>
             <b-row>
               <b-col cols="12">
                 <b-table
-                  striped
                   hover
                   show-empty
                   responsive
@@ -68,7 +33,7 @@
                   :fields="fields"
                   :current-page="currentPage"
                   :per-page="perPage"
-                  table-class="skindata-table"
+                  table-class="rewardhistory-table"
                 >
                   <template slot="deadline" slot-scope="row">
                     <div

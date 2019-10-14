@@ -4,6 +4,7 @@
       <b-navbar class="navbar-header" toggleable="lg">
         <b-navbar-brand @click="goToLanding">
           <div class="img-responsive header-logo"></div>
+          <span class="brand-text"><b>COSBALL</b></span>
         </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
