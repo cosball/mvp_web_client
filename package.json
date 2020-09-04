@@ -30,7 +30,7 @@
     "lodash": "^4.17.15",
     "minimist": "^1.2.0",
     "moment": "^2.24.0",
-    "papaparse": "^4.6.3",
+    "papaparse": "^5.2.0",
     "rm": "^0.1.8",
     "snapsvg": "^0.5.1",
     "twix": "^1.2.1",
